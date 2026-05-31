@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maria Voika — Riprogrammazione Mentale</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #B8955A;
+  --gold-light: #D4B07A;
+  --dark: #080807;
+  --dark2: #0F0F0D;
+  --dark3: #171714;
+  --text: #F2EDE4;
+  --text-muted: #9E9485;
+  --text-dim: #5E5850;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--dark);
+  color: var(--text);
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.1rem 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(8,8,7,0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 0.5px solid rgba(184,149,90,0.18);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-weight: 700;
+  color: var(--gold); letter-spacing: 0.04em;
+}
+.nav-cta {
+  background: var(--gold); color: var(--dark);
+  border: none; padding: 0.55rem 1.4rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem; font-weight: 600;
+  border-radius: 2px; cursor: pointer;
+  transition: all 0.2s; text-decoration: none;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.nav-cta:hover { background: var(--gold-light); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  padding: 9rem 2rem 5rem;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 55% at 50% 45%, rgba(184,149,90,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gold);
+  border: 0.5px solid rgba(184,149,90,0.35);
+  padding: 0.45rem 1.4rem; border-radius: 1px;
+  margin-bottom: 2rem;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 700; line-height: 1.2;
+  max-width: 860px; margin: 0 auto 1rem;
+}
+.hero h1 em { color: var(--gold); font-style: italic; }
+.hero-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 600; line-height: 1.5;
+  max-width: 800px; margin: 0 auto 1.5rem;
+  color: var(--text-muted); text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.hero-big strong { color: var(--gold); }
+.hero-sub {
+  font-size: 1rem; color: var(--text-muted);
+  max-width: 580px; margin: 0 auto 3rem;
+  font-weight: 300; line-height: 1.8;
+}
+.btn-primary {
+  display: inline-block;
+  background: var(--gold); color: var(--dark);
+  font-family: 'Jost', sans-serif;
+  font-size: 1rem; font-weight: 700;
+  padding: 1.1rem 3rem; border-radius: 2px;
+  text-decoration: none; letter-spacing: 0.1em;
+  text-transform: uppercase; transition: all 0.25s;
+  border: none; cursor: pointer;
+  box-shadow: 0 0 30px rgba(184,149,90,0.25);
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-outline {
+  display: inline-block; background: transparent;
+  color: var(--text-muted); font-family: 'Jost', sans-serif;
+  font-size: 0.85rem; font-weight: 400;
+  padding: 1rem 2rem; text-decoration: none;
+  letter-spacing: 0.06em; transition: color 0.2s; cursor: pointer;
+}
+.btn-outline:hover { color: var(--gold); }
+.hero-btns { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; align-items: center; margin-bottom: 1rem; }
+.hero-note { font-size: 0.78rem; color: var(--text-dim); letter-spacing: 0.06em; }
+
+/* VIDEO SECTION */
+.video-section {
+  background: var(--dark2);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.video-container {
+  max-width: 760px; margin: 0 auto;
+}
+.video-label {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem;
+}
+.video-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700; margin-bottom: 2rem;
+}
+.video-title em { color: var(--gold); font-style: italic; }
+.video-placeholder {
+  width: 100%; aspect-ratio: 16/9;
+  background: var(--dark3);
+  border: 0.5px solid rgba(184,149,90,0.2);
+  border-radius: 6px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1rem; color: var(--text-dim);
+  font-size: 0.85rem; cursor: pointer;
+  transition: border-color 0.2s;
+  position: relative; overflow: hidden;
+}
+.video-placeholder:hover { border-color: rgba(184,149,90,0.5); }
+.video-play {
+  width: 70px; height: 70px; border-radius: 50%;
+  background: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; color: var(--dark);
+}
+.video-replace-note {
+  margin-top: 1rem; font-size: 0.78rem;
+  color: var(--text-dim); font-style: italic;
+}
+
+/* SECTIONS */
+section { padding: 6rem 2rem; }
+.container { max-width: 1040px; margin: 0 auto; }
+.section-label {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.9rem, 3.8vw, 3rem);
+  font-weight: 700; line-height: 1.18; margin-bottom: 1.2rem;
+}
+.section-title em { color: var(--gold); font-style: italic; }
+.gold-line {
+  width: 48px; height: 1.5px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin: 1.4rem 0;
+}
+
+/* BOOK SECTION */
+.book-section { background: var(--dark2); }
+.book-grid {
+  display: grid; grid-template-columns: 1fr 1.4fr;
+  gap: 4rem; align-items: center;
+}
+@media (max-width: 700px) { .book-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+.book-cover {
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, #0A0A08, #1A1A14);
+  border: 0.5px solid rgba(184,149,90,0.3);
+  border-radius: 6px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 2rem; text-align: center;
+  position: relative; overflow: hidden;
+}
+.book-cover::before {
+  content: '◈';
+  font-size: 8rem; color: rgba(184,149,90,0.06);
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.book-cover-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem; font-weight: 700;
+  color: var(--gold); line-height: 1.2;
+  margin-bottom: 0.5rem; position: relative; z-index: 1;
+}
+.book-cover-sub {
+  font-size: 0.8rem; color: var(--text-muted);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  position: relative; z-index: 1; margin-bottom: 1.5rem;
+}
+.book-cover-author {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; color: var(--text-muted);
+  position: relative; z-index: 1;
+}
+.book-price {
+  display: inline-block;
+  background: var(--gold); color: var(--dark);
+  font-size: 1.4rem; font-weight: 700;
+  padding: 0.4rem 1.2rem; border-radius: 2px;
+  margin-bottom: 1.5rem; position: relative; z-index: 1;
+}
+.book-includes { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; margin: 1.5rem 0; }
+.book-include-item {
+  display: flex; align-items: flex-start; gap: 0.8rem;
+  font-size: 0.9rem; color: var(--text-muted);
+}
+.book-check { color: var(--gold); font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+/* FREE EBOOK */
+.free-section {
+  background: var(--dark3);
+  border: 0.5px solid rgba(184,149,90,0.15);
+  border-radius: 8px; padding: 3rem;
+  text-align: center; margin-top: 3rem;
+}
+.free-badge {
+  display: inline-block;
+  background: rgba(184,149,90,0.12);
+  border: 1px solid var(--gold);
+  color: var(--gold); font-size: 0.75rem; font-weight: 700;
+  padding: 0.4rem 1rem; border-radius: 2px;
+  text-transform: uppercase; letter-spacing: 0.15em;
+  margin-bottom: 1.2rem;
+}
+.free-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem; font-weight: 700; margin-bottom: 0.8rem;
+}
+.free-desc { color: var(--text-muted); font-size: 0.95rem; max-width: 480px; margin: 0 auto 1.8rem; }
+
+/* STORIA */
+.story-bg { background: var(--dark2); }
+.story-grid {
+  display: grid; grid-template-columns: 1fr 1.4fr;
+  gap: 5rem; align-items: start;
+}
+@media (max-width: 720px) { .story-grid { grid-template-columns: 1fr; gap: 3rem; } }
+.story-img {
+  aspect-ratio: 3/4;
+  background: var(--dark3);
+  border: 0.5px solid rgba(184,149,90,0.14);
+  border-radius: 4px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0.7rem; color: var(--text-dim); font-size: 0.82rem;
+  text-align: center; padding: 1rem;
+}
+.story-tag {
+  display: inline-block;
+  background: rgba(184,149,90,0.08);
+  border: 0.5px solid rgba(184,149,90,0.25);
+  color: var(--gold); font-size: 0.72rem; font-weight: 600;
+  padding: 0.3rem 0.9rem; border-radius: 2px;
+  text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1.4rem;
+}
+.story-block { font-size: 0.96rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1.2rem; }
+.story-block strong { color: var(--text); font-weight: 500; }
+.story-highlight {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem; font-weight: 600;
+  color: var(--text); line-height: 1.4;
+  border-left: 2px solid var(--gold);
+  padding-left: 1.5rem; margin: 1rem 0;
+}
+.story-highlight em { color: var(--gold); font-style: italic; }
+
+/* STEPS */
+.steps-bg { background: var(--dark); }
+.steps-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.2rem; margin-top: 3rem;
+}
+.step-card {
+  background: var(--dark2);
+  border: 0.5px solid rgba(184,149,90,0.1);
+  border-radius: 4px; padding: 2rem;
+  transition: border-color 0.25s;
+}
+.step-card:hover { border-color: rgba(184,149,90,0.38); }
+.step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 700;
+  color: rgba(184,149,90,0.18); line-height: 1; margin-bottom: 0.9rem;
+}
+.step-title { font-weight: 600; font-size: 0.98rem; margin-bottom: 0.6rem; }
+.step-desc { font-size: 0.87rem; color: var(--text-muted); line-height: 1.75; }
+
+/* INCLUDES */
+.includes-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem; margin-top: 3rem;
+}
+.include-item {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1.2rem 1.3rem; background: var(--dark3);
+  border-radius: 4px; border: 0.5px solid rgba(184,149,90,0.08);
+}
+.include-check {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(184,149,90,0.1);
+  border: 0.5px solid rgba(184,149,90,0.35);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 0.15rem;
+  font-size: 0.65rem; color: var(--gold);
+}
+.include-text { font-size: 0.87rem; color: var(--text-muted); line-height: 1.65; }
+.include-text strong { color: var(--text); font-weight: 500; display: block; margin-bottom: 0.15rem; }
+
+/* CTA */
+.cta-section {
+  text-align: center; background: var(--dark2);
+  position: relative; overflow: hidden;
+  padding: 6rem 2rem;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 55% 50% at 50% 50%, rgba(184,149,90,0.06) 0%, transparent 70%);
+}
+.cta-section .container { position: relative; }
+.cta-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.9rem, 3.8vw, 3rem);
+  font-weight: 700; margin-bottom: 1.2rem;
+}
+.cta-section h2 em { color: var(--gold); font-style: italic; }
+.cta-section p { color: var(--text-muted); max-width: 500px; margin: 0 auto 2.8rem; font-size: 0.97rem; }
+.cta-note { margin-top: 1.2rem; font-size: 0.78rem; color: var(--text-dim); letter-spacing: 0.06em; }
+
+/* FAQ */
+.faq-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.faq-item {
+  background: var(--dark3);
+  border: 0.5px solid rgba(184,149,90,0.1);
+  border-radius: 4px; overflow: hidden;
+}
+.faq-q {
+  padding: 1.2rem 1.5rem; font-weight: 500; font-size: 0.93rem;
+  cursor: pointer; display: flex; justify-content: space-between;
+  align-items: center; user-select: none;
+}
+.faq-q:hover { color: var(--gold); }
+.faq-icon { font-size: 1.1rem; color: var(--gold); transition: transform 0.22s; flex-shrink: 0; margin-left: 1rem; }
+.faq-a {
+  font-size: 0.87rem; color: var(--text-muted);
+  max-height: 0; overflow: hidden; padding: 0 1.5rem; line-height: 1.8;
+  transition: max-height 0.3s ease, padding 0.3s;
+}
+.faq-item.open .faq-a { max-height: 250px; padding: 0 1.5rem 1.3rem; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+/* PROBLEM */
+.problem-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+.problem-item {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1rem 1.2rem; background: var(--dark3);
+  border-left: 1.5px solid rgba(184,149,90,0.35);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.9rem; color: var(--text-muted);
+}
+.problem-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 0.5rem; }
+
+/* FOOTER */
+footer {
+  background: var(--dark2);
+  border-top: 0.5px solid rgba(184,149,90,0.1);
+  padding: 2.5rem 2rem; text-align: center;
+  color: var(--text-dim); font-size: 0.8rem;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; color: var(--gold); margin-bottom: 0.6rem; font-weight: 700;
+}
+footer a { color: var(--text-dim); text-decoration: none; }
+footer a:hover { color: var(--gold); }
+
+.scroll-top {
+  position: fixed; bottom: 2rem; right: 2rem;
+  width: 42px; height: 42px;
+  background: var(--gold); color: var(--dark);
+  border-radius: 2px; font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 99;
+  opacity: 0; transition: opacity 0.3s;
+  text-decoration: none; font-weight: 600;
+}
+.scroll-top.visible { opacity: 1; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Maria Voika</div>
+  <a href="#sessione" class="nav-cta">Sessione Gratuita</a>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO — INVITO PRINCIPALE
+══════════════════════════════════════════ -->
+<section class="hero" id="top">
+  <div style="position:relative;">
+    <div class="hero-eyebrow">Metodo Unico di Riprogrammazione Mentale</div>
+
+    <h1>
+      Se sei imprenditore, dipendente o libero professionista<br>
+      e senti di essere destinato a qualcosa di <em>grande</em>,<br>
+      ma ti senti bloccato...
+    </h1>
+
+    <p class="hero-big">
+      <strong>SCOPRI IL METODO UNICO DI RIPROGRAMMAZIONE MENTALE</strong><br>
+      attraverso cui centinaia di persone sono arrivate a guadagnare<br>
+      migliaia, decine di migliaia, o addirittura centinaia di migliaia di euro<br>
+      in sole poche settimane
+    </p>
+
+    <p class="hero-sub">
+      E inoltre, a migliorare le relazioni, l'energia, la vitalità, la salute e a realizzare <strong>QUALSIASI cosa si mettano in testa</strong>.
+    </p>
+
+    <div class="hero-btns">
+      <a href="https://payhip.com/b/1HxDc" class="btn-primary">✦ Acquista Ora — 19,89€</a>
+      <a href="#sessione" class="btn-outline">Prenota Sessione Gratuita ↓</a>
+    </div>
+    <p class="hero-note">Sessione di 30 minuti · Gratuita · Senza impegno</p>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     VIDEO
+══════════════════════════════════════════ -->
+<section class="video-section">
+  <div class="video-container">
+    <div class="video-label">Il Mio Messaggio per Te</div>
+    <h2 class="video-title">Guarda come <em>ho trasformato</em> la mia vita</h2>
+
+    <!-- SOSTITUISCI con il tuo video reale: -->
+    <!-- <video width="100%" controls poster="tua-immagine.jpg">
+           <source src="tuo-video.mp4" type="video/mp4">
+         </video> -->
+    <!-- OPPURE embed YouTube: -->
+    <!-- <iframe width="100%" style="aspect-ratio:16/9" src="https://www.youtube.com/embed/ID_VIDEO"
+            frameborder="0" allowfullscreen></iframe> -->
+
+    <div class="video-placeholder">
+      <iframe width="100%" style="aspect-ratio:16/9; border:none; border-radius:6px;" 
+              src="https://www.youtube.com/embed/mH99Tp694X0" 
+              allowfullscreen></iframe>
+    </div>
+    <p class="video-replace-note">→ Incolla qui il link del tuo video una volta registrato su HeyGen</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PROBLEMA
+══════════════════════════════════════════ -->
+<section style="background: var(--dark);">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:4rem; align-items:center;">
+      <div>
+        <div class="section-label">Ti Riconosci?</div>
+        <h2 class="section-title">Sei <em>bloccato</em> in un loop senza uscita?</h2>
+        <div class="gold-line"></div>
+        <ul class="problem-list">
+          <li class="problem-item"><div class="problem-dot"></div>I debiti crescono, il lavoro non decolla</li>
+          <li class="problem-item"><div class="problem-dot"></div>Lavori tantissimo ma non riesci ad evolvere</li>
+          <li class="problem-item"><div class="problem-dot"></div>Pensieri negativi, ansia, esaurimento emotivo</li>
+          <li class="problem-item"><div class="problem-dot"></div>Le relazioni si deteriorano — in famiglia e nel lavoro</li>
+          <li class="problem-item"><div class="problem-dot"></div>Sai di poter fare di più, ma non sai come sbloccarti</li>
+          <li class="problem-item"><div class="problem-dot"></div>Ogni volta che avanzi un po', arriva un nuovo ostacolo</li>
+        </ul>
+      </div>
+      <div>
+        <blockquote style="font-family:'Cormorant Garamond',serif; font-size:1.55rem; font-weight:600; line-height:1.45; color:var(--text); border-left:2px solid var(--gold); padding-left:1.5rem;">
+          "I blocchi non sono là fuori.<br>
+          Sono <em style="color:var(--gold);">nella tua mente</em>.<br>
+          E la mente si può<br><em style="color:var(--gold);">riprogrammare</em>."
+          <cite style="display:block; margin-top:1.4rem; font-family:'Jost',sans-serif; font-size:0.82rem; font-weight:400; color:var(--text-dim); font-style:normal;">— Maria Voika</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     LIBRO
+══════════════════════════════════════════ -->
+<section class="book-section" id="libro">
+  <div class="container">
+    <div class="book-grid">
+      <div class="book-cover" style="padding:0; overflow:hidden;">
+        <img src="https://i.imgur.com/24DYpuW.jpg" alt="La Legge dell'Attrazione" style="width:100%; height:100%; object-fit:cover; border-radius:6px;">
+        <div style="position:absolute; bottom:0; left:0; right:0; padding:1.5rem; background:linear-gradient(transparent, rgba(0,0,0,0.85)); text-align:center;">
+          <div class="book-cover-title">La Legge dell'Attrazione</div>
+          <div class="book-price" style="margin:0.5rem auto; display:inline-block;">19,89€</div>
+          <div class="book-cover-author">Maria Voika</div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Il Libro</div>
+        <h2 class="section-title">8 Capitoli per <em>trasformare</em> la tua realtà</h2>
+        <div class="gold-line"></div>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.5rem; line-height:1.8;">
+          La mia storia vera, le tecniche che ho usato io stessa e che puoi applicare anche tu — ogni giorno, in soli 15 minuti. Dal cancro e dai debiti a 10.000€ al mese.
+        </p>
+        <ul class="book-includes">
+          <li class="book-include-item"><span class="book-check">✓</span> Cos'è la Legge dell'Attrazione — Mito vs. Scienza</li>
+          <li class="book-include-item"><span class="book-check">✓</span> La Trasformazione Mentale Profonda</li>
+          <li class="book-include-item"><span class="book-check">✓</span> Come Attirare il Benessere Finanziario</li>
+          <li class="book-include-item"><span class="book-check">✓</span> Come Attirare l'Amore e le Relazioni Autentiche</li>
+          <li class="book-include-item"><span class="book-check">✓</span> Come Attirare Salute e Vitalità</li>
+          <li class="book-include-item"><span class="book-check">✓</span> Visualizzazione Creativa e Affermazioni</li>
+          <li class="book-include-item"><span class="book-check">✓</span> Persone di Successo e la Legge dell'Attrazione</li>
+          <li class="book-include-item"><span class="book-check">✓</span> Il Piano Completo di 30 Giorni</li>
+          <li class="book-include-item"><span class="book-check">✓</span> BONUS: 30 Affermazioni Potenti</li>
+        </ul>
+        <a href="https://payhip.com/b/1HxDc" class="btn-primary" style="margin-top:1rem; display:inline-block;">
+          Acquista Ora — 19,89€ →
+        </a>
+        <p style="margin-top:0.8rem; font-size:0.78rem; color:var(--text-dim);">Ebook PDF · Consegna immediata</p>
+      </div>
+    </div>
+
+    <!-- EBOOK GRATUITO -->
+    <div class="free-section">
+      <div class="free-badge">🎁 Gratis</div>
+      <h3 class="free-title">Scarica i Primi 3 Capitoli Gratuitamente</h3>
+      <p class="free-desc">La mia storia + Cos'è la Legge dell'Attrazione + La Trasformazione Mentale + Piano 7 giorni. Inizia oggi, senza pagare nulla.</p>
+      <a href="https://maria-voika.tiiny.site/La_Guida_Essenziale_per_Iniziare.pdf" class="btn-primary">Scarica Gratis →</a>
+      <p style="margin-top:0.8rem; font-size:0.78rem; color:var(--text-dim);">Nessuna carta di credito · Immediato</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     STORIA
+══════════════════════════════════════════ -->
+<section class="story-bg">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-img" style="padding:0; overflow:hidden;">
+        <img src="https://i.imgur.com/arLFOLy.jpg" alt="Maria Voika" style="width:100%; height:100%; object-fit:cover; border-radius:4px;">
+      </div>
+      <div>
+        <div class="story-tag">La Mia Storia</div>
+        <h2 class="section-title">Da <em>1.200€ al mese</em><br>a 10.000€ al mese</h2>
+        <div class="gold-line"></div>
+
+        <div class="story-block">
+          <strong>Quindici anni fa sono arrivata in Italia.</strong> Con le valigie piene di debiti, una depressione silenziosa, un matrimonio distrutto e una figlia al liceo da mantenere da sola.
+        </div>
+
+        <div class="story-block">
+          Ho lavorato come <strong>badante, nelle pulizie, call center, ASA nelle case di cura</strong> — sia in Italia che in Inghilterra. Poi tre operazioni al rene. E all'ultimo intervento: <strong>cancro maligno aggressivo al colon</strong>. Sei mesi di vita.
+        </div>
+
+        <div class="story-highlight">
+          "Per tre anni la depressione mi ha terrorizzata. Ma poi è successa una cosa che non avevo mai vissuto: <em>un viaggio astrale</em>. Da quel momento tutto è cambiato."
+        </div>
+
+        <div class="story-block">
+          Ho scoperto la Legge dell'Attrazione. Ho riprogrammato la mia mente — ogni giorno, 15 minuti. E la mia vita è cambiata completamente.
+        </div>
+
+        <a href="#sessione" class="btn-primary" style="margin-top:1.5rem; display:inline-block;">
+          Prenota la Sessione Gratuita →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     6 PASSI
+══════════════════════════════════════════ -->
+<section class="steps-bg">
+  <div class="container">
+    <div class="section-label">Il Programma</div>
+    <h2 class="section-title">I <em>6 Passi</em> verso il tuo Potenziale Illimitato</h2>
+    <div class="gold-line"></div>
+    <p style="color:var(--text-muted); font-size:0.97rem; max-width:560px;">Ogni passo è personalizzato sulla tua situazione, i tuoi obiettivi e i tuoi blocchi specifici.</p>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-num">01</div><div class="step-title">Scrittura a Mano e Visualizzazione</div><p class="step-desc">5 minuti al giorno per creare nuove connessioni neurali che attivano intuizione e creatività.</p></div>
+      <div class="step-card"><div class="step-num">02</div><div class="step-title">Sviluppo degli Emisferi Cerebrali</div><p class="step-desc">3 tecniche semplici da 3 minuti ogni mattina che sbloccano il pensiero creativo e la produttività.</p></div>
+      <div class="step-card"><div class="step-num">03</div><div class="step-title">Test della Personalità</div><p class="step-desc">Scopri il tuo tipo e usalo come vantaggio in ogni relazione, negoziazione e partnership.</p></div>
+      <div class="step-card"><div class="step-num">04</div><div class="step-title">Mantra Personalizzato</div><p class="step-desc">Un mantra costruito attorno al tuo obiettivo principale che accelera i risultati in settimane.</p></div>
+      <div class="step-card"><div class="step-num">05</div><div class="step-title">Eliminazione dei Blocchi Subconsci</div><p class="step-desc">Identifichiamo con precisione le credenze limitanti e le eliminiamo — spesso con rivelazioni immediate.</p></div>
+      <div class="step-card"><div class="step-num">06</div><div class="step-title">Connessione con la Forza Divina</div><p class="step-desc">Tecniche di abbondanza per connettere la tua mente con la forza dell'Universo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     COSA INCLUDE
+══════════════════════════════════════════ -->
+<section style="background:var(--dark2);">
+  <div class="container">
+    <div class="section-label">Cosa Ricevi</div>
+    <h2 class="section-title">Tutto quello che include <em>il programma</em></h2>
+    <div class="gold-line"></div>
+    <div class="includes-grid">
+      <div class="include-item"><div class="include-check">✓</div><div class="include-text"><strong>Mentoring 1:1 Online 24/7</strong>Da 3 a 6 mesi + 3 mesi BONUS</div></div>
+      <div class="include-item"><div class="include-check">✓</div><div class="include-text"><strong>Tecniche 100% Personalizzate</strong>Adattate alla tua situazione specifica</div></div>
+      <div class="include-item"><div class="include-check">✓</div><div class="include-text"><strong>Test della Personalità</strong>Scopri e massimizza i tuoi punti di forza</div></div>
+      <div class="include-item"><div class="include-check">✓</div><div class="include-text"><strong>Frequenze Energetiche Personalizzate</strong>528 Hz, 432 Hz e altre frequenze per sbloccare la mente e attirare abbondanza</div></div>
+      <div class="include-item"><div class="include-check">✓</div><div class="include-text"><strong>2 Incontri/Mese con la Community</strong>Su Zoom con tutti i membri</div></div>
+      <div class="include-item"><div class="include-check">✓</div><div class="include-text"><strong>3 Sessioni 1:1 su Zoom</strong>Valutazione personale diretta con Maria</div></div>
+      <div class="include-item"><div class="include-check">✓</div><div class="include-text"><strong>Feedback e Analisi Continua</strong>Monitoraggio quotidiano del tuo percorso</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CTA PRINCIPALE
+══════════════════════════════════════════ -->
+<section class="cta-section" id="sessione">
+  <div class="container">
+    <div class="section-label" style="text-align:center;">Fai il Primo Passo</div>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.9rem,3.8vw,3rem); font-weight:700; margin-bottom:1.2rem; text-align:center;">
+      Prenota la tua <em style="color:var(--gold);font-style:italic;">sessione gratuita</em>
+    </h2>
+    <div class="gold-line" style="margin:1.5rem auto;"></div>
+    <p>Parliamo della tua situazione, identifichiamo i blocchi e vediamo insieme se il programma è adatto a te. Nessuna pressione, nessun obbligo.</p>
+    <a href="#sessione" class="btn-primary" style="font-size:1rem; padding:1.2rem 3.5rem;">
+      ✦ Prenota Ora la Sessione Gratuita
+    </a>
+    <p class="cta-note">30 minuti · Completamente gratuita · Posti limitati</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FAQ
+══════════════════════════════════════════ -->
+<section style="background:var(--dark);">
+  <div class="container">
+    <div class="section-label">Domande Frequenti</div>
+    <h2 class="section-title">Hai <em>domande</em>?</h2>
+    <div class="gold-line"></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Come faccio a sapere se questo metodo funzionerà per me?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Non esiste nessuno che abbia applicato tutte le tecniche con costanza e non abbia ottenuto risultati. La responsabilità è tua — noi ti forniamo il sistema e un supporto continuo ogni giorno.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Quanto tempo richiedono le tecniche ogni giorno?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Soli 15–30 minuti al giorno. Le tecniche sono semplici e si integrano facilmente nella tua routine mattutina.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Funziona anche se non ho un'azienda?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Assolutamente sì. Il programma funziona per imprenditori, dipendenti, liberi professionisti — e chiunque voglia crescere nella vita.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Qual è il prezzo del programma di coaching?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Il prezzo viene personalizzato in base alla tua situazione e ai tuoi obiettivi. Lo scoprirai durante la sessione di consulenza gratuita.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Tutto si svolge online?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Sì, 100% online. Avrai accesso a Maria 24/7 via messaggi, più le sessioni di gruppo e individuali su Zoom.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Maria Voika</div>
+  <p style="margin-bottom:0.5rem;">© 2024 Maria Voika · Tutti i diritti riservati</p>
+  <p>📧 voichitamaria77@gmail.com &nbsp;·&nbsp; 🌐 mariavoika.netlify.app</p>
+  <p style="margin-top:0.5rem;"><a href="#">Termini e Condizioni</a> &nbsp;·&nbsp; <a href="#">Privacy Policy</a></p>
+</footer>
+
+<a href="#top" class="scroll-top" id="scrollTop">↑</a>
+
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+const scrollBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  scrollBtn.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
+</script>
+</body>
+</html>
