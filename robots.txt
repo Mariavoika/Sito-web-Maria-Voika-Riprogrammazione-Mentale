@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mariavoika.github.io/Sito-web-Maria-Voika-Riprogrammazione-Mentale/sitemap.xml
