@@ -78,6 +78,13 @@
     .portrait{
       width:100%;height:620px;object-fit:cover;border-radius:32px;box-shadow:var(--shadow)
     }
+    .hero-video{
+      display:block;width:100%;height:620px;object-fit:cover;
+      border-radius:32px;box-shadow:var(--shadow);background:#20191b;
+    }
+    .video-note{
+      margin:12px 0 0;text-align:center;color:var(--muted);font-size:.84rem;
+    }
     .portrait-card{
       position:absolute;left:-26px;bottom:26px;max-width:290px;
       background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px;
@@ -123,6 +130,7 @@
       .books{grid-template-columns:1fr}
       .menu a:not(.small-cta){display:none}
       .portrait{height:520px}
+      .hero-video{height:min(720px,115vw)}
       .portrait-card{left:18px;right:18px;max-width:none}
     }
     @media(max-width:640px){
@@ -167,11 +175,15 @@
           <p class="micro">Nessuna promessa miracolosa. Un percorso umano, pratico e sincero.</p>
         </div>
         <div class="portrait-wrap">
-          <img class="portrait" src="maria-voika.jpg" alt="Maria Voika">
+          <video class="hero-video" controls playsinline preload="metadata" poster="video-poster.jpg" aria-label="Video di presentazione di Maria Voika">
+            <source src="maria-voika-presentazione.mp4" type="video/mp4">
+            Il tuo browser non supporta la riproduzione del video.
+          </video>
           <div class="portrait-card">
-            <strong>Maria Voika</strong>
-            Autrice e guida nella riprogrammazione mentale e nella crescita personale.
+            <strong>Conosci Maria</strong>
+            Guarda il video e scopri la storia e il messaggio che hanno dato vita a questo percorso.
           </div>
+          <p class="video-note">Premi ▶ per ascoltare il mio messaggio.</p>
         </div>
       </div>
     </section>
