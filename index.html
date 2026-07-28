@@ -85,6 +85,14 @@
     .video-note{
       margin:12px 0 0;text-align:center;color:var(--muted);font-size:.84rem;
     }
+    .video-intro{margin:0 0 20px;text-align:center}
+    .video-intro .video-kicker{
+      margin:0 0 7px;color:var(--accent-dark);font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(1.35rem,2.4vw,1.85rem);font-weight:700;line-height:1.2;
+    }
+    .video-intro .video-title{
+      margin:0;color:var(--muted);font-size:1rem;font-weight:800;
+    }
     .portrait-card{
       position:absolute;left:-26px;bottom:26px;max-width:290px;
       background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px;
@@ -175,15 +183,14 @@
           <p class="micro">Nessuna promessa miracolosa. Un percorso umano, pratico e sincero.</p>
         </div>
         <div class="portrait-wrap">
-          <video class="hero-video" controls playsinline preload="metadata" aria-label="Video di presentazione di Maria Voika">
-            <source src="maria-voika-video.mp4" type="video/mp4">
+          <div class="video-intro">
+            <p class="video-kicker">Se sei arrivata fin qui, forse una parte di te sta cercando un nuovo inizio.</p>
+            <p class="video-title">Prima di continuare, lascia che mi presenti.</p>
+          </div>
+          <video class="hero-video" controls playsinline preload="metadata" poster="maria-voika-copertina.jpg" aria-label="Video di presentazione di Maria Voika">
+            <source src="maria-voika-presentazione.mp4" type="video/mp4">
             Il tuo browser non supporta la riproduzione del video.
           </video>
-          <div class="portrait-card">
-            <strong>Conosci Maria</strong>
-            Guarda il video e scopri la storia e il messaggio che hanno dato vita a questo percorso.
-          </div>
-          <p class="video-note">Premi ▶ per ascoltare il mio messaggio.</p>
         </div>
       </div>
     </section>
