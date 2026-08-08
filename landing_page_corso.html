@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO -->
+    <title>Il Metodo della Frequenza Vincente — Corso di Riprogrammazione Mentale | Maria Voika</title>
+    <meta name="description" content="Il Metodo della Frequenza Vincente: riprogrammazione mentale + frequenze energetiche personalizzate per donne che vogliono trasformare il dolore in forza e ricominciare davvero.">
+    <meta name="keywords" content="riprogrammazione mentale, corso riprogrammazione mentale, frequenze energetiche, metodo frequenza vincente, legge dell'attrazione, cambiare vita, ricominciare, donne">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Il Metodo della Frequenza Vincente — Maria Voika">
+    <meta property="og:description" content="Il percorso completo per donne che vogliono uscire dal blocco, ritrovare fiducia e ricominciare davvero. Con Maria Voika.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="it_IT">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #e8ded1;
+            --beige-light: #f3ede3;
+            --beige-dark: #c4b5a0;
+            --brown: #6b5d4f;
+            --brown-dark: #3a2f25;
+            --green: #5a6b4d;
+            --green-dark: #3d4d33;
+            --white: #faf7f2;
+            --shadow: 0 4px 20px rgba(58, 47, 37, 0.08);
+            --gold: #b89b6e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background: var(--beige);
+            color: var(--brown-dark);
+            line-height: 1.8;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            color: var(--brown-dark);
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(232, 222, 209, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 10px rgba(58, 47, 37, 0.05);
+        }
+        .nav-logo a {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem; font-weight: 600;
+            color: var(--brown-dark);
+            text-decoration: none;
+        }
+        .nav-cta {
+            background: var(--brown-dark); color: var(--white);
+            padding: 10px 24px; border-radius: 30px;
+            font-size: 0.85rem; text-decoration: none;
+            transition: background 0.3s;
+        }
+        .nav-cta:hover { background: var(--green); }
+
+        /* HERO - HOOK */
+        .hero {
+            min-height: 95vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            padding: 100px 20px 60px;
+            background: linear-gradient(180deg, var(--beige) 0%, var(--beige-light) 100%);
+        }
+        .hero-eyebrow {
+            font-size: 0.8rem; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--gold);
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: clamp(2.2rem, 5.5vw, 4rem);
+            line-height: 1.25; max-width: 750px;
+            margin-bottom: 25px;
+        }
+        .hero h1 .accent { font-style: italic; color: var(--green); }
+        .hero p {
+            font-size: 1.1rem; max-width: 600px;
+            color: var(--brown); margin-bottom: 15px;
+        }
+        .hero-cta {
+            display: inline-block;
+            background: var(--brown-dark); color: var(--white);
+            padding: 18px 45px; border-radius: 35px;
+            font-size: 1.05rem; text-decoration: none;
+            transition: all 0.3s; box-shadow: var(--shadow);
+            margin-top: 20px;
+        }
+        .hero-cta:hover { background: var(--green); transform: translateY(-2px); }
+        .hero-social {
+            margin-top: 35px;
+            display: flex; gap: 30px; flex-wrap: wrap;
+            justify-content: center;
+            font-size: 0.9rem; color: var(--brown);
+        }
+        .hero-social span { display: flex; align-items: center; gap: 8px; }
+
+        /* SECTIONS */
+        section { padding: 80px 20px; max-width: 800px; margin: 0 auto; }
+        .section-label {
+            font-size: 0.75rem; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--green);
+            text-align: center; margin-bottom: 15px;
+        }
+        section h2 {
+            font-size: clamp(1.7rem, 4vw, 2.6rem);
+            text-align: center; margin-bottom: 30px;
+            line-height: 1.3;
+        }
+
+        /* QUALIFY */
+        .qualify-box {
+            background: var(--white); border-radius: 20px;
+            padding: 50px 35px; box-shadow: var(--shadow);
+            text-align: center;
+        }
+        .qualify-box h2 { margin-bottom: 20px; }
+        .qualify-box p { color: var(--brown); margin-bottom: 25px; }
+        .qualify-box .not-for {
+            background: var(--beige); border-radius: 12px;
+            padding: 20px; margin: 20px 0; text-align: left;
+        }
+        .qualify-box .not-for p { margin: 0; color: var(--brown); font-size: 0.95rem; }
+        .qualify-box .for-you {
+            background: #ece8e0; border-radius: 12px;
+            padding: 20px; margin: 20px 0; text-align: left;
+            border-left: 3px solid var(--green);
+        }
+        .qualify-box .for-you p { margin: 0; color: var(--brown-dark); font-size: 0.95rem; }
+
+        /* PROBLEM AGITATION */
+        .problem-text {
+            font-size: 1.1rem; color: var(--brown);
+            max-width: 600px; margin: 0 auto 20px; text-align: center;
+        }
+        .problem-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic; font-size: 1.4rem;
+            color: var(--brown-dark); max-width: 500px;
+            margin: 30px auto; padding: 25px;
+            border-left: 3px solid var(--green);
+        }
+        .problem-costs {
+            max-width: 600px; margin: 40px auto;
+            display: grid; gap: 15px;
+        }
+        .problem-cost {
+            display: flex; gap: 15px; align-items: flex-start;
+            background: var(--white); padding: 18px 25px;
+            border-radius: 12px; box-shadow: var(--shadow);
+        }
+        .problem-cost-icon { color: #c55; font-size: 1.2rem; min-width: 25px; }
+
+        /* NEW OPPORTUNITY */
+        .opportunity {
+            background: var(--beige-light); padding: 80px 20px;
+            max-width: 100%;
+        }
+        .opportunity-inner { max-width: 700px; margin: 0 auto; }
+        .opportunity-inner h2 { text-align: center; margin-bottom: 30px; }
+        .opportunity-inner p {
+            font-size: 1.1rem; color: var(--brown); margin-bottom: 20px;
+        }
+        .opportunity-shift {
+            background: var(--white); border-radius: 15px;
+            padding: 35px; margin: 30px 0;
+            border-left: 4px solid var(--gold);
+        }
+        .opportunity-shift p { margin: 0; }
+
+        /* HERO STORY */
+        .story-inner { max-width: 650px; margin: 0 auto; }
+        .story-inner p { font-size: 1.05rem; color: var(--brown); margin-bottom: 18px; }
+        .story-highlight {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic; font-size: 1.35rem;
+            color: var(--brown-dark); text-align: center;
+            margin: 30px 0; padding: 0 20px;
+        }
+        .story-credentials {
+            display: flex; gap: 20px; flex-wrap: wrap;
+            justify-content: center; margin: 30px 0;
+        }
+        .credential {
+            background: var(--white); padding: 15px 25px;
+            border-radius: 12px; box-shadow: var(--shadow);
+            text-align: center; font-size: 0.9rem;
+        }
+        .credential strong { display: block; font-size: 1.5rem; color: var(--green); font-family: 'Cormorant Garamond', serif; }
+
+        /* SOCIAL PROOF */
+        .proof-list { display: grid; gap: 25px; margin-top: 30px; }
+        .proof-item {
+            background: var(--white); border-radius: 15px;
+            padding: 25px; box-shadow: var(--shadow);
+        }
+        .proof-item p { color: var(--brown); }
+        .proof-item .proof-result {
+            margin-top: 15px; padding-top: 15px;
+            border-top: 1px solid var(--beige-dark);
+            color: var(--green-dark); font-weight: 500; font-size: 0.95rem;
+        }
+
+        /* MECCANISMO */
+        .mechanism-box {
+            background: var(--white); border-radius: 20px;
+            padding: 40px; box-shadow: var(--shadow);
+        }
+        .mechanism-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem; color: var(--green);
+            text-align: center; margin-bottom: 20px;
+        }
+        .mechanism-steps { display: grid; gap: 25px; margin-top: 25px; }
+        .mechanism-step {
+            display: flex; gap: 20px; align-items: flex-start;
+        }
+        .step-num {
+            background: var(--green); color: var(--white);
+            width: 35px; height: 35px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.9rem; font-weight: 600;
+            min-width: 35px; flex-shrink: 0;
+        }
+        .step-content h3 { font-size: 1.15rem; margin-bottom: 5px; }
+        .step-content p { color: var(--brown); font-size: 0.95rem; }
+
+        /* OFFER */
+        .offer-section {
+            background: var(--brown-dark); color: var(--beige);
+            padding: 80px 20px; text-align: center;
+        }
+        .offer-section h2 { color: var(--beige); }
+        .offer-section .section-label { color: var(--gold); }
+        .offer-box {
+            max-width: 600px; margin: 40px auto 0;
+            background: var(--white); border-radius: 20px;
+            padding: 40px 30px; box-shadow: var(--shadow);
+            color: var(--brown-dark); text-align: left;
+        }
+        .offer-box h3 {
+            font-size: 1.4rem; margin-bottom: 20px; text-align: center;
+        }
+        .offer-list { list-style: none; display: grid; gap: 15px; }
+        .offer-list li {
+            display: flex; gap: 12px; align-items: flex-start;
+            font-size: 0.95rem; color: var(--brown);
+        }
+        .offer-list .check { color: var(--green); font-weight: bold; min-width: 20px; }
+        .offer-bonus {
+            background: #f0ebe2; border-radius: 12px;
+            padding: 20px; margin-top: 25px;
+            border: 2px dashed var(--gold);
+        }
+        .offer-bonus h4 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--gold); font-size: 1.2rem; margin-bottom: 10px;
+        }
+        .offer-price {
+            text-align: center; margin: 30px 0 20px;
+        }
+        .offer-price-old {
+            text-decoration: line-through;
+            color: var(--beige-dark); font-size: 1.1rem;
+        }
+        .offer-price-new {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem; color: var(--brown-dark);
+            display: block; margin-top: 5px;
+        }
+        .offer-cta {
+            display: block; width: 100%;
+            background: var(--brown-dark); color: var(--white);
+            padding: 18px; border: none; border-radius: 30px;
+            font-family: 'Jost', sans-serif; font-size: 1.1rem;
+            cursor: pointer; text-decoration: none;
+            text-align: center; transition: background 0.3s;
+        }
+        .offer-cta:hover { background: var(--green); }
+        .offer-urgency {
+            text-align: center; margin-top: 15px;
+            font-size: 0.85rem; color: #c55;
+        }
+
+        /* GUARANTEE */
+        .guarantee {
+            background: #ece8e0; border-radius: 15px;
+            padding: 30px; margin: 30px auto; max-width: 500px;
+            text-align: center;
+        }
+        .guarantee h3 { color: var(--green-dark); font-size: 1.2rem; margin-bottom: 10px; }
+        .guarantee p { color: var(--brown); font-size: 0.9rem; }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--white); border-radius: 12px;
+            padding: 25px; margin-bottom: 15px; box-shadow: var(--shadow);
+        }
+        .faq-item h3 { font-size: 1.1rem; margin-bottom: 10px; }
+        .faq-item p { color: var(--brown); font-size: 0.95rem; }
+
+        /* FINAL CTA */
+        .final-cta {
+            text-align: center; padding: 100px 20px;
+            background: linear-gradient(180deg, var(--beige-light) 0%, var(--beige) 100%);
+        }
+        .final-cta h2 { font-size: clamp(1.8rem, 4.5vw, 3rem); margin-bottom: 20px; }
+        .final-cta p { font-size: 1.1rem; color: var(--brown); max-width: 500px; margin: 0 auto 40px; }
+        .final-cta-button {
+            display: inline-block; background: var(--brown-dark);
+            color: var(--white); padding: 20px 50px;
+            border-radius: 35px; font-size: 1.1rem;
+            text-decoration: none; transition: all 0.3s;
+            box-shadow: var(--shadow);
+        }
+        .final-cta-button:hover { background: var(--green); transform: translateY(-2px); }
+        .final-cta-alt {
+            margin-top: 25px; font-size: 0.9rem; color: var(--beige-dark);
+        }
+        .final-cta-alt a { color: var(--brown); text-decoration: underline; }
+
+        footer {
+            background: var(--brown-dark); color: var(--beige);
+            padding: 40px 20px; text-align: center; font-size: 0.8rem;
+        }
+        footer a { color: var(--beige-dark); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            .hero h1 { font-size: 2rem; }
+            .qualify-box { padding: 35px 20px; }
+            .mechanism-box { padding: 30px 20px; }
+            .offer-box { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo"><a href="index.html">Maria Voika · Riprogrammazione Mentale</a></div>
+        <a href="#iscrizione" class="nav-cta">Iscrivimi ora</a>
+    </nav>
+
+    <!-- 1. HOOK -->
+    <div class="hero">
+        <div class="hero-eyebrow">⚡ Il corso completo per donne che vogliono ricominciare</div>
+        <h1>Smetti di lottare contro te stessa.<br>Impara a <span class="accent">riprogrammare la tua mente</span> in 15 minuti al giorno.</h1>
+        <p>Il Metodo della Frequenza Vincente — un percorso passo dopo passo che ti porta dal sentirti bloccata a ritrovare chiarezza, forza e direzione. Niente formule magiche. Solo strumenti che funzionano.</p>
+        <a href="#iscrizione" class="hero-cta">Voglio iscrivermi ora →</a>
+        <div class="hero-social">
+            <span>✦ 2 libri pubblicati</span>
+            <span>✦ Donne aiutate a ritrovare fiducia</span>
+            <span>✦ Metodologia testata sul campo</span>
+        </div>
+    </div>
+
+    <!-- 2. QUALIFY AUDIENCE -->
+    <section>
+        <div class="qualify-box">
+            <div class="section-label">Per chi è questo corso — e per chi NON lo è</div>
+            <h2>Questo corso non è per tutti.<br>Ed è giusto che tu lo sappia prima.</h2>
+            
+            <div class="not-for">
+                <p><strong>❌ NON è per te se:</strong></p>
+                <p>• Cerchi una soluzione miracolosa che cambi tutto in una notte</p>
+                <p>• Non sei disposta a dedicare 15 minuti al giorno a te stessa</p>
+                <p>• Vuoi qualcuno che faccia il lavoro al posto tuo</p>
+            </div>
+
+            <div class="for-you">
+                <p><strong>✅ È per te se:</strong></p>
+                <p>• Sei una donna che sente di essersi persa lungo il percorso</p>
+                <p>• Hai provato a "pensare positivo" ma non ha funzionato</p>
+                <p>• Sei stanca di rimandare e vuoi un metodo concreto, non solo teoria</p>
+                <p>• Sei pronta a fare un primo passo vero, anche piccolo, ma oggi</p>
+            </div>
+
+            <p style="margin-top: 20px; font-size: 0.95rem;">Se ti riconosci in queste parole, quello che stai per leggere potrebbe essere l'inizio di un nuovo capitolo.</p>
+        </div>
+    </section>
+
+    <!-- 3. AGITATE PROBLEM -->
+    <section>
+        <div class="section-label">La verità che nessuno ti dice</div>
+        <h2>Hai provato tutto.<br>Ma "tutto" non ha funzionato.</h2>
+        <p class="problem-text">Hai letto libri sulla legge dell'attrazione. Hai fatto liste di gratitudine. Hai provato a essere positiva. Hai cercato di "pensare in grande" e "visualizzare" ciò che volevi.</p>
+        <p class="problem-text">Eppure, dopo un po', la stessa voce tornava. Le stesse paure. Gli stessi schemi. La stessa sensazione di essere <em>bloccata</em>.</p>
+        
+        <div class="problem-quote">«Non è che non ci provi. È che ogni volta che riprovi, ti sembra di ricominciare da zero. E la fiducia si erode un po' di più.»</div>
+
+        <p class="problem-text">E intanto il tempo passa. La stanchezza si accumula. Una parte di te si chiede: <em>"forse sono io che non riesco?"</em></p>
+
+        <div class="problem-costs">
+            <div class="problem-cost">
+                <div class="problem-cost-icon">⏳</div>
+                <div><strong>Tempo perso</strong> — mesi o anni passati a cercare soluzioni che non durano</div>
+            </div>
+            <div class="problem-cost">
+                <div class="problem-cost-icon">💸</div>
+                <div><strong>Soldi spesi</strong> — in libri, corsi, app che restano chiuse o non funzionano</div>
+            </div>
+            <div class="problem-cost">
+                <div class="problem-cost-icon">💔</div>
+                <div><strong>Fiducia erosa</strong> — ogni tentativo fallito ti convince un po' di più che "non è per te"</div>
+            </div>
+            <div class="problem-cost">
+                <div class="problem-cost-icon">🔋</div>
+                <div><strong>Energia svuotata</strong> — la sensazione di lottare controvento, sempre</div>
+            </div>
+        </div>
+
+        <p class="problem-text" style="margin-top: 30px;"><strong>Ma la verità è un'altra. E cambia tutto.</strong></p>
+    </section>
+
+    <!-- 4. NEW OPPORTUNITY -->
+    <section class="opportunity">
+        <div class="opportunity-inner">
+            <div class="section-label">Il cambio di prospettiva</div>
+            <h2>Il problema non sei tu.<br>Il problema è il metodo.</h2>
+            <p>Il problema non è che non sei abbastanza forte, abbastanza brava o abbastanza "qualcosa".</p>
+            <p>Il problema è che <strong>nessuno ti ha mai insegnato come funziona davvero la tua mente</strong> — e come uscirne senza dover lottare contro te stessa ogni giorno.</p>
+            
+            <div class="opportunity-shift">
+                <p><strong>Vecchio approccio:</strong> "Pensa positivo, visualizza, sii grata" → funziona per un po', poi svanisce.</p>
+                <p style="margin-top: 15px;"><strong>Nuovo approccio:</strong> Comprendi gli <em>schemi</em> che guidano le tue scelte, impara a <em>riconoscerli</em> nel momento in cui si attivano, e usa strumenti concreti per <em>scriverne di nuovi</em>.</p>
+            </div>
+
+            <p>Non si tratta di combattere i pensieri negativi. Si tratta di <strong>capire perché arrivano, da dove vengono, e come smettere di seguirli</strong>.</p>
+            <p>Quando capisci questo, tutto cambia. Non perché diventi una persona diversa, ma perché <em>diventi padrona della tua mente</em> invece di esserne passeggera.</p>
+        </div>
+    </section>
+
+    <!-- 5. HERO STORY -->
+    <section>
+        <div class="story-inner">
+            <div class="section-label">La mia storia</div>
+            <h2 style="text-align: center;">Sono Maria Voika.<br>E so cosa significa sentirsi bloccata.</h2>
+            <p>Mi chiamo Maria Voika. Ho attraversato depressione, difficoltà economiche, relazioni dolorose e problemi di salute che hanno cambiato profondamente il mio modo di guardare la vita.</p>
+            <p>Ho lavorato come badante, nelle pulizie, nei call center. Poi tre operazioni e una diagnosi che mi ha fatto credere che fosse finita.</p>
+            <p>In quel momento più buio, ho capito una cosa: <strong>non potevo cambiare quello che mi era successo, ma potevo cambiare come la mia mente lo interpretava.</strong></p>
+            <p>Ho iniziato a studiare il dialogo interiore, le convinzioni e le abitudini mentali. Giorno dopo giorno ho sperimentato pratiche di consapevolezza — non teorie da libro, ma strumenti concreti che potevo applicare in 15 minuti al mattino.</p>
+            <p>Quei 15 minuti hanno cambiato tutto.</p>
+            <div class="story-highlight">«Non voglio dirti che cambiare sia facile.<br>Voglio dirti che è possibile. Perché io l'ho fatto.»</div>
+            <p>Oggi metto questa esperienza al servizio di altre donne. Senza formule magiche, senza promesse impossibili. Con strumenti veri, testati sulla mia pelle.</p>
+            
+            <div class="story-credentials">
+                <div class="credential">
+                    <strong>2</strong>
+                    Libri pubblicati su Amazon
+                </div>
+                <div class="credential">
+                    <strong>15 min</strong>
+                    Tutto quello che serve al giorno
+                </div>
+                <div class="credential">
+                    <strong>100%</strong>
+                    Metodologia testata sul campo
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SOCIAL PROOF -->
+    <section>
+        <div class="section-label">Non sei la sola</div>
+        <h2>Donne come te ce l'hanno fatta.<br>E tu puoi farcela.</h2>
+        <div class="proof-list">
+            <div class="proof-item">
+                <p>"Avevo letto di tutto sulla legge dell'attrazione ma niente cambiava davvero. Con il metodo di Maria ho capito <em>perché</em> non funzionava: non avevo mai lavorato sugli schemi profondi. Ora li riconosco e li fermo."</p>
+                <div class="proof-result">→ Da "bloccata e confusa" a "chiara e determinata"</div>
+            </div>
+            <div class="proof-item">
+                <p>"I 15 minuti al mattino sembravano niente. Ma dopo due settimane mi sono accorta che la voce nella testa era cambiata. Non era più 'non sei abbastanza'. Era 'proviamo'."</p>
+                <div class="proof-result">→ Da "auto-sabotaggio quotidiano" a "dialogo interiore sano"</div>
+            </div>
+            <div class="proof-item">
+                <p>"Avevo paura che fosse l'ennesimo corso che resta chiuso. Invece è pratico, semplice, e Maria ti segue davvero. Non ti molla."</p>
+                <div class="proof-result">→ Da "scettica e stanca" a "fiduciosa e in azione"</div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 30px; font-size: 0.9rem; color: var(--beige-dark);">
+            <!-- TODO: Aggiungi qui le tue testimonianze vere quando le hai. Le frasi sopra sono esempi basati sul tuo metodo. Sostituiscile con recensioni reali appena le hai. -->
+            ⚠️ Sostituisci queste testimonianze con quelle vere quando le hai. Per ora sono esempi basati sul tuo metodo.
+        </p>
+    </section>
+
+    <!-- 7. HOW IT WORKS -->
+    <section>
+        <div class="section-label">Come funziona</div>
+        <h2>Il Metodo della Frequenza Vincente</h2>
+        <p style="text-align: center; color: var(--brown); margin-bottom: 30px;">Un percorso in 4 fasi che ti porta dalla confusione alla chiarezza, passo dopo passo.</p>
+        
+        <div class="mechanism-box">
+            <div class="mechanism-name">Il Metodo della Frequenza Vincente</div>
+            <p style="text-align: center; color: var(--brown);">Riprogrammazione mentale + Frequenze energetiche personalizzate + 7 Regole per allineare mente, energia e azione.</p>
+            
+            <div class="mechanism-steps">
+                <div class="mechanism-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>Riconosci i tuoi schemi</h3>
+                        <p>Identifichi le convinzioni e i pensieri ripetitivi che ti bloccano — quelli che non sapevi nemmeno di avere. Li vedi chiaramente per la prima volta.</p>
+                    </div>
+                </div>
+                <div class="mechanism-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>Riscrivi il dialogo interiore</h3>
+                        <p>Impari a osservare le parole che rivolgi a te stessa e a sostituirle con parole che costruiscono, non che distruggono. Un esercizio semplice ma potente.</p>
+                    </div>
+                </div>
+                <div class="mechanism-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>Allinea mente ed energia</h3>
+                        <p>Usi le frequenze energetiche personalizzate per ritrovare equilibrio e presenza. Non sono teoria — sono strumenti pratici da integrare nella tua giornata.</p>
+                    </div>
+                </div>
+                <div class="mechanism-step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h3>Fai il primo passo — e poi il secondo</h3>
+                        <p>Applichi le 7 Regole nella vita quotidiana. Esci dal corso non con una teoria, ma con un piano concreto e una decisione già presa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. OFFER -->
+    <section class="offer-section" id="iscrizione">
+        <div class="section-label">Il programma completo</div>
+        <h2 style="color: var(--beige);">Ecco cosa ricevi quando ti iscrivi.</h2>
+        
+        <div class="offer-box">
+            <h3>Il Metodo della Frequenza Vincente — Programma Completo</h3>
+            <ul class="offer-list">
+                <li><span class="check">✓</span> <strong>Modulo 1 — Riconoscere gli schemi:</strong> come identificare le convinzioni che ti bloccano (e perché sono lì)</li>
+                <li><span class="check">✓</span> <strong>Modulo 2 — Il Filtro Invisibile:</strong> come funziona il RAS e perché il tuo cervello attira sempre la stessa realtà</li>
+                <li><span class="check">✓</span> <strong>Modulo 3 — La Tecnica Theta:</strong> il rituale di 15 minuti al mattino che riprogramma l'inconscio</li>
+                <li><span class="check">✓</span> <strong>Modulo 4 — Riscrivere il dialogo interiore:</strong> le parole che cambiano tutto</li>
+                <li><span class="check">✓</span> <strong>Modulo 5 — Frequenze energetiche personalizzate:</strong> come allineare mente ed energia</li>
+                <li><span class="check">✓</span> <strong>Modulo 6 — Le 7 Regole:</strong> il quaderno pratico per applicare tutto nella vita di tutti i giorni</li>
+                <li><span class="check">✓</span> <strong>Chiamata 1:1 con Maria:</strong> 30 minuti personali per il tuo percorso</li>
+                <li><span class="check">✓</span> <strong>Gruppo di supporto:</strong> accesso a una community di donne che stanno facendo lo stesso percorso</li>
+            </ul>
+
+            <div class="offer-bonus">
+                <h4>🎁 Bonus inclusi (solo se ti iscrivi ora)</h4>
+                <ul class="offer-list" style="margin-top: 10px;">
+                    <li><span class="check">✦</span> <strong>Ebook "La Guida Essenziale per Iniziare"</strong> — valore 11,11€</li>
+                    <li><span class="check">✦</span> <strong>Sessione di frequenze energetiche di guarigione</strong> dal vivo</li>
+                    <li><span class="check">✦</span> <strong>Tecnica dei 15 minuti stampabile</strong> — da tenere sul comodino</li>
+                </ul>
+            </div>
+
+            <div class="offer-price">
+                <span class="offer-price-old">Prezzo intero: 197€</span>
+                <span class="offer-price-new">97€</span>
+                <p style="font-size: 0.85rem; color: var(--brown); margin-top: 5px;">Offerta di lancio — prezzo che aumenterà</p>
+            </div>
+
+            <a href="https://wa.me/393714518694?text=Voglio%20iscrivermi%20al%20Metodo%20della%20Frequenza%20Vincente" class="offer-cta" target="_blank">Iscrivimi ora su WhatsApp →</a>
+            <p class="offer-urgency">⚠️ Solo 30 posti disponibili · Il prezzo aumenterà prossimamente</p>
+        </div>
+
+        <div class="guarantee">
+            <h3>🛡️ Garanzia "Prova Sincera"</h3>
+            <p>Se dopo 7 giorni dal corso non senti che ti è stato utile, scrivimi e ti rimborsa integralmente. Senza domande, senza imbarazzo.</p>
+        </div>
+    </section>
+
+    <!-- 9. FINAL CTA -->
+    <section class="final-cta">
+        <h2>Puoi restare dove sei.<br>Oppure puoi fare il primo passo.</h2>
+        <p>Le stesse paure, gli stessi schemi, la stessa voce che ti dice "non è per me". Oppure 15 minuti al giorno che cambiano il dialogo con te stessa — e di conseguenza, tutto il resto.</p>
+        <a href="https://wa.me/393714518694?text=Voglio%20iscrivermi%20al%20Metodo%20della%20Frequenza%20Vincente" class="final-cta-button" target="_blank">Sì, voglio iscrivermi ora →</a>
+        <p class="final-cta-alt">Hai domande prima di decidere? <a href="https://wa.me/393714518694" target="_blank">Scrivimi su WhatsApp</a> — ti rispondo personalmente.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <div class="section-label">Domande frequenti</div>
+        <h2>Prima di decidere</h2>
+        <div class="faq-item">
+            <h3>Quanto tempo mi serve ogni giorno?</h3>
+            <p>15 minuti al mattino. Tutto qui. Il metodo è progettato per donne con vite piene, non per chi ha ore di tempo libero.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Devo avere esperienza con la riprogrammazione mentale?</h3>
+            <p>Assolutamente no. Il corso parte da zero e costruisce passo dopo passo. Se hai già letto libri sulla legge dell'attrazione, troverai ancora più valore perché capirai perché non funzionava.</p>
+        </div>
+        <div class="faq-item">
+            <h3>È un percorso medico o psicologico?</h3>
+            <p>No. È un percorso educativo e di crescita personale. Non sostituisce cure mediche, psicologiche o terapeutiche.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Come avviene il pagamento?</h3>
+            <p>Scrivimi su WhatsApp e ti invio le istruzioni. Il pagamento è sicuro e puoi rimborsare entro 7 giorni se non sei soddisfatta.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Per quanto tempo ho accesso al materiale?</h3>
+            <p>Il materiale resta tuo. Puoi rivederlo quando vuoi, quante volte vuoi.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Maria Voika · Il Metodo della Frequenza Vincente</p>
+        <p style="margin-top: 10px; color: var(--beige-dark);">
+            © 2026 Maria Voika · Tutti i diritti riservati<br>
+            I contenuti hanno finalità educative e di crescita personale. Non sostituiscono consulenza medica, psicologica o finanziaria.<br>
+            <a href="mailto:voichitamaria77@gmail.com">voichitamaria77@gmail.com</a> · <a href="index.html">Torna alla home</a>
+        </p>
+    </footer>
+
+</body>
+</html>
