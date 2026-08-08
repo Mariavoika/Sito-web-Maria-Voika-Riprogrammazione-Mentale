@@ -1,323 +1,567 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Maria Voika: riprogrammazione mentale, crescita personale, libri e masterclass per donne che vogliono ritrovare fiducia e ricominciare.">
-  <title>Maria Voika | Riprogrammazione Mentale</title>
-  <style>
-    :root{
-      --bg:#fffaf7;
-      --surface:#ffffff;
-      --soft:#f6ece8;
-      --text:#2d2425;
-      --muted:#6f6263;
-      --accent:#9d5061;
-      --accent-dark:#743746;
-      --gold:#b98b4e;
-      --line:#eadbd6;
-      --shadow:0 18px 60px rgba(93,50,59,.13);
-      --radius:24px;
-      --max:1140px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at 10% 8%,rgba(242,218,224,.75),transparent 31rem),
-        linear-gradient(180deg,#fffaf7 0%,#fff 48%,#fffaf7 100%);
-      line-height:1.65;
-    }
-    a{color:inherit}
-    img{display:block;max-width:100%}
-    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
-    .topbar{
-      position:sticky;top:0;z-index:30;
-      background:rgba(255,250,247,.9);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(234,219,214,.9);
-    }
-    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{text-decoration:none;font-weight:900;letter-spacing:.08em;font-size:.92rem}
-    .brand span{color:var(--accent);font-weight:700}
-    .menu{display:flex;align-items:center;gap:22px}
-    .menu a{text-decoration:none;font-size:.92rem;font-weight:800;color:var(--muted)}
-    .menu a:hover{color:var(--accent)}
-    .small-cta{
-      padding:11px 16px!important;border-radius:999px;background:var(--accent);color:white!important
-    }
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:9px;margin:0 0 18px;
-      padding:8px 13px;border:1px solid var(--line);border-radius:999px;
-      background:rgba(255,255,255,.8);color:var(--accent-dark);
-      font-size:.82rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;
-    }
-    .eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
-    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.08;margin-top:0}
-    h1{font-size:clamp(3.15rem,8vw,6.7rem);letter-spacing:-.055em;margin-bottom:22px}
-    h1 em{color:var(--accent);font-weight:inherit}
-    h2{font-size:clamp(2.35rem,5vw,4.35rem);letter-spacing:-.04em;margin-bottom:18px}
-    h3{font-size:1.55rem;margin-bottom:10px}
-    .hero{padding:86px 0 72px;overflow:hidden}
-    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:56px;align-items:center}
-    .lead{font-size:clamp(1.12rem,2vw,1.34rem);color:var(--muted);max-width:720px;margin:0 0 28px}
-    .actions{display:flex;flex-wrap:wrap;gap:13px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;min-height:58px;
-      padding:16px 23px;border-radius:16px;text-decoration:none;font-weight:900;
-      transition:.2s ease;
-    }
-    .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;box-shadow:0 16px 36px rgba(116,55,70,.25)}
-    .btn-secondary{border:1px solid var(--line);background:#fff;color:var(--accent-dark)}
-    .btn:hover{transform:translateY(-2px)}
-    .micro{font-size:.89rem;color:var(--muted);margin-top:12px}
-    .portrait-wrap{position:relative}
-    .portrait{
-      width:100%;height:620px;object-fit:cover;border-radius:32px;box-shadow:var(--shadow)
-    }
-    .hero-video{
-      display:block;width:100%;height:620px;object-fit:cover;
-      border-radius:32px;box-shadow:var(--shadow);background:#20191b;
-    }
-    .video-note{
-      margin:12px 0 0;text-align:center;color:var(--muted);font-size:.84rem;
-    }
-    .video-intro{margin:0 0 20px;text-align:center}
-    .video-intro .video-kicker{
-      margin:0 0 7px;color:var(--accent-dark);font-family:Georgia,"Times New Roman",serif;
-      font-size:clamp(1.35rem,2.4vw,1.85rem);font-weight:700;line-height:1.2;
-    }
-    .video-intro .video-title{
-      margin:0;color:var(--muted);font-size:1rem;font-weight:800;
-    }
-    .portrait-card{
-      position:absolute;left:-26px;bottom:26px;max-width:290px;
-      background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px;
-      box-shadow:var(--shadow)
-    }
-    .portrait-card strong{display:block;color:var(--accent-dark);margin-bottom:4px}
-    section{padding:82px 0}
-    .soft{background:var(--soft);border-block:1px solid var(--line)}
-    .section-head{max-width:780px;margin-bottom:38px}
-    .section-head p{font-size:1.08rem;color:var(--muted);margin:0}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 10px 34px rgba(80,43,49,.06)}
-    .card p{color:var(--muted);margin:0}
-    .num{display:block;color:var(--gold);font-weight:900;letter-spacing:.09em;margin-bottom:12px}
-    .story-grid{display:grid;grid-template-columns:.84fr 1.16fr;gap:48px;align-items:center}
-    .quote{
-      margin-top:24px;padding:22px;border-left:4px solid var(--accent);
-      background:#fff;border-radius:0 18px 18px 0;
-      font-family:Georgia,"Times New Roman",serif;font-size:1.22rem
-    }
-    .books{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-    .book{
-      background:#fff;border:1px solid var(--line);border-radius:26px;padding:28px;
-      box-shadow:0 12px 36px rgba(80,43,49,.07)
-    }
-    .book p{color:var(--muted)}
-    .banner{
-      background:#302326;color:#fff;border-radius:30px;padding:44px;
-      display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;
-      box-shadow:var(--shadow)
-    }
-    .banner p{color:#d9ced1;margin:0}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .contact-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px}
-    .contact-card p{color:var(--muted)}
-    .contact-link{display:block;margin-top:12px;font-weight:900;color:var(--accent-dark);text-decoration:none}
-    footer{padding:34px 0 90px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
-    .footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-    .mobile-cta{display:none}
-    @media(max-width:900px){
-      .hero-grid,.story-grid,.banner,.contact-grid{grid-template-columns:1fr}
-      .cards{grid-template-columns:1fr}
-      .books{grid-template-columns:1fr}
-      .menu a:not(.small-cta){display:none}
-      .portrait{height:520px}
-      .hero-video{height:min(720px,115vw)}
-      .portrait-card{left:18px;right:18px;max-width:none}
-    }
-    @media(max-width:640px){
-      .container{width:min(var(--max),calc(100% - 26px))}
-      .hero{padding-top:58px}
-      h1{font-size:clamp(3rem,15vw,4.7rem)}
-      section{padding:64px 0}
-      .banner{padding:28px}
-      .mobile-cta{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:40}
-      .mobile-cta .btn{width:100%;min-height:54px}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO: queste tag aiutano Google a trovare il sito -->
+    <title>Maria Voika · Riprogrammazione Mentale per Donne che Vogliono Ricominciare</title>
+    <meta name="description" content="Riprogrammazione mentale e frequenze energetiche per donne che desiderano ritrovare fiducia, uscire dal blocco e ricominciare. Masterclass gratuita con Maria Voika.">
+    <meta name="keywords" content="riprogrammazione mentale, frequenze energetiche, ritrovare fiducia, ricominciare, legge dell'attrazione, dialogo interiore, crescita personale, donne, benessere mentale">
+    <meta name="author" content="Maria Voika">
+    
+    <!-- Open Graph: per quando condividi il link su WhatsApp, Facebook, Instagram -->
+    <meta property="og:title" content="Maria Voika · Riprogrammazione Mentale">
+    <meta property="og:description" content="La tua vita non è finita. Può ancora cambiare direzione. Masterclass gratuita per donne che vogliono ricominciare.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:url" content="https://mariavoika.github.io/Sito-web-Maria-Voika-Riprogrammazione-Mentale/">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #e8ded1;
+            --beige-light: #f3ede3;
+            --beige-dark: #c4b5a0;
+            --brown: #6b5d4f;
+            --brown-dark: #3a2f25;
+            --green: #5a6b4d;
+            --white: #faf7f2;
+            --shadow: 0 4px 20px rgba(58, 47, 37, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background: var(--beige);
+            color: var(--brown-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            color: var(--brown-dark);
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(232, 222, 209, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 10px rgba(58, 47, 37, 0.05);
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--brown-dark);
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--brown);
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--green); }
+
+        .nav-cta {
+            background: var(--brown-dark);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .nav-cta:hover { background: var(--green); }
+
+        /* HERO - HOOK */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px 40px;
+            background: linear-gradient(180deg, var(--beige) 0%, var(--beige-light) 100%);
+        }
+
+        .hero-eyebrow {
+            font-size: 0.8rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--green);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.2;
+            max-width: 800px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 .accent {
+            font-style: italic;
+            color: var(--green);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 600px;
+            color: var(--brown);
+            margin-bottom: 40px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--brown-dark);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: 35px;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-cta:hover {
+            background: var(--green);
+            transform: translateY(-2px);
+        }
+
+        .hero-scroll {
+            margin-top: 60px;
+            font-size: 0.8rem;
+            color: var(--beige-dark);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        /* SECTION GENERALE */
+        section {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--green);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.3;
+        }
+
+        /* QUALIFY AUDIENCE */
+        .qualify {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .qualify h2 {
+            margin-bottom: 20px;
+        }
+
+        .qualify p {
+            font-size: 1.05rem;
+            color: var(--brown);
+            margin-bottom: 30px;
+        }
+
+        .qualify-list {
+            display: grid;
+            gap: 25px;
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        .qualify-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .qualify-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--green);
+            min-width: 30px;
+        }
+
+        .qualify-item p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* AGITATE PROBLEM */
+        .problem {
+            text-align: center;
+        }
+
+        .problem-text {
+            font-size: 1.15rem;
+            color: var(--brown);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .problem-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--brown-dark);
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            border-left: 3px solid var(--green);
+            text-align: left;
+        }
+
+        /* HERO STORY */
+        .story {
+            background: var(--beige-light);
+            border-radius: 0;
+            padding: 80px 20px;
+        }
+
+        .story-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .story p {
+            font-size: 1.05rem;
+            color: var(--brown);
+            margin-bottom: 20px;
+        }
+
+        .story-highlight {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.4rem;
+            color: var(--brown-dark);
+            text-align: center;
+            margin: 40px 0;
+            padding: 0 20px;
+        }
+
+        /* WHAT YOU GET */
+        .get-list {
+            display: grid;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .get-item {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .get-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .get-item p {
+            color: var(--brown);
+            font-size: 1rem;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(180deg, var(--beige-light) 0%, var(--beige) 100%);
+            padding: 100px 20px;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: var(--brown);
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--brown-dark);
+            color: var(--white);
+            padding: 18px 50px;
+            border-radius: 35px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+        }
+
+        .cta-button:hover {
+            background: var(--green);
+            transform: translateY(-2px);
+        }
+
+        .cta-urgency {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: var(--beige-dark);
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-link {
+            background: var(--white);
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: var(--brown-dark);
+            font-size: 0.9rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .contact-link:hover { transform: translateY(-2px); }
+
+        /* FOOTER */
+        footer {
+            background: var(--brown-dark);
+            color: var(--beige);
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        footer a { color: var(--beige-dark); text-decoration: none; }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            nav { padding: 15px 20px; }
+            .hero h1 { font-size: 2.2rem; }
+            .qualify { padding: 40px 25px; }
+            .problem-quote { font-size: 1.2rem; padding: 20px; }
+        }
+    </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container nav">
-      <a class="brand" href="index.html">MARIA VOIKA <span>· RIPROGRAMMAZIONE MENTALE</span></a>
-      <nav class="menu">
-        <a href="#chi-sono">Chi sono</a>
-        <a href="#libri">Libri</a>
-        <a href="masterclass.html">Masterclass</a>
-        <a href="#contatti">Contatti</a>
-        <a class="small-cta" href="masterclass.html">Partecipa gratis</a>
-      </nav>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-logo">Maria Voika · Riprogrammazione Mentale</div>
+        <ul class="nav-links">
+            <li><a href="#chi-sono">Chi sono</a></li>
+            <li><a href="#libri">Libri</a></li>
+            <li><a href="#masterclass">Masterclass</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+        </ul>
+        <a href="#masterclass" class="nav-cta">Partecipa gratis</a>
+    </nav>
+
+    <!-- 1. HOOK -->
+    <div class="hero">
+        <div class="hero-eyebrow">Per donne che vogliono ricominciare</div>
+        <h1>La tua vita non è finita.<br><span class="accent">Può ancora cambiare direzione.</span></h1>
+        <p>Ti aiuto a riconoscere i pensieri e gli schemi che ti bloccano, ritrovare fiducia e compiere passi concreti verso una vita più tua.</p>
+        <a href="#masterclass" class="hero-cta">Partecipa alla masterclass gratuita</a>
+        <div class="hero-scroll">↓ scopri di più</div>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Per donne che vogliono ricominciare</p>
-          <h1>La tua vita non è finita. Può ancora <em>cambiare direzione.</em></h1>
-          <p class="lead">
-            Ti aiuto a riconoscere i pensieri e gli schemi che ti bloccano, ritrovare fiducia
-            e compiere passi concreti verso una vita più tua.
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="masterclass.html">Partecipa alla masterclass gratuita</a>
-            <a class="btn btn-secondary" href="#chi-sono">Conosci la mia storia</a>
-          </div>
-          <p class="micro">Nessuna promessa miracolosa. Un percorso umano, pratico e sincero.</p>
+    <!-- 2. QUALIFY AUDIENCE -->
+    <section id="forse-ti-riconosci">
+        <div class="qualify">
+            <div class="section-label">Forse ti riconosci</div>
+            <h2>Hai passato anni a essere forte per tutti.<br>Ora non sai più come esserlo per te.</h2>
+            <p>Non ti manca il valore. Forse hai soltanto bisogno di fermarti, ascoltarti e ricominciare da un primo passo possibile.</p>
+            <div class="qualify-list">
+                <div class="qualify-item">
+                    <div class="qualify-num">01</div>
+                    <div><strong>Hai perso fiducia</strong><br>Dubiti di te stessa anche quando, in fondo, sai di avere ancora tanto da offrire.</div>
+                </div>
+                <div class="qualify-item">
+                    <div class="qualify-num">02</div>
+                    <div><strong>Ti senti bloccata</strong><br>Desideri cambiare, ma continui a rimandare perché non sai da dove iniziare.</div>
+                </div>
+                <div class="qualify-item">
+                    <div class="qualify-num">03</div>
+                    <div><strong>Temi sia troppo tardi</strong><br>Guardi indietro e pensi che il tempo migliore della tua vita sia già passato.</div>
+                </div>
+            </div>
         </div>
-        <div class="portrait-wrap">
-          <div class="video-intro">
-            <p class="video-kicker">Se sei arrivata fin qui, forse una parte di te sta cercando un nuovo inizio.</p>
-            <p class="video-title">Prima di continuare, lascia che mi presenti.</p>
-          </div>
-          <iframe class="hero-video" src="https://www.youtube.com/embed/NzO3Bxspcbw" title="Maria Voika — Presentazione" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:32px;box-shadow:var(--shadow);"></iframe>
-        </div>
-      </div>
     </section>
 
-    <section class="soft">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Forse ti riconosci</p>
-          <h2>Hai passato anni a essere forte per tutti. Ora non sai più come esserlo per te.</h2>
-          <p>
-            Non ti manca il valore. Forse hai soltanto bisogno di fermarti, ascoltarti e ricominciare
-            da un primo passo possibile.
-          </p>
+    <!-- 3. AGITATE PROBLEM -->
+    <section class="problem">
+        <div class="section-label">La verità che nessuno ti dice</div>
+        <h2>Non è che non sai cosa fare.<br>È che nessuno ti ha mai insegnato come.</h2>
+        <p class="problem-text">
+            Hai provato a essere positiva. Hai letto libri sulla legge dell'attrazione. Hai fatto liste di gratitudine. Hai cercato di "pensare in grande".
+        </p>
+        <p class="problem-text">
+            Ma poi la vita reale ti ha travolto di nuovo. Le stesse paure. Gli stessi schemi. La stessa voce nella testa che ti dice "non sei abbastanza".
+        </p>
+        <div class="problem-quote">
+            «La parte più difficile non è sapere cosa vorresti cambiare. È sentirsi bloccata e non capire perché, nonostante tu ci provi, nulla sembri davvero cambiare.»
         </div>
-        <div class="cards">
-          <article class="card">
-            <span class="num">01</span>
-            <h3>Hai perso fiducia</h3>
-            <p>Dubiti di te stessa anche quando, in fondo, sai di avere ancora tanto da offrire.</p>
-          </article>
-          <article class="card">
-            <span class="num">02</span>
-            <h3>Ti senti bloccata</h3>
-            <p>Desideri cambiare, ma continui a rimandare perché non sai da dove iniziare.</p>
-          </article>
-          <article class="card">
-            <span class="num">03</span>
-            <h3>Temi sia troppo tardi</h3>
-            <p>Guardi indietro e pensi che il tempo migliore della tua vita sia già passato.</p>
-          </article>
-        </div>
-      </div>
+        <p class="problem-text">
+            E intanto il tempo passa. La fiducia si erode. E una parte di te si chiede: <em>"forse è davvero troppo tardi per me?"</em>
+        </p>
+        <p class="problem-text" style="margin-top: 30px; font-size: 1.1rem;">
+            <strong>Non è troppo tardi. E non è colpa tua.</strong>
+        </p>
     </section>
 
-    <section id="chi-sono">
-      <div class="container story-grid">
-        <div>
-          <img class="portrait" style="height:520px" src="maria-voika.jpg" alt="Ritratto di Maria Voika">
+    <!-- 4 & 5. HERO STORY + NEW OPPORTUNITY -->
+    <section class="story" id="chi-sono">
+        <div class="story-inner">
+            <div class="section-label">La mia storia</div>
+            <h2>Non insegno da una vita perfetta.<br>Condivido ciò che mi ha aiutata a rialzarmi.</h2>
+            <p>Mi chiamo Maria Voika. Ho attraversato depressione, difficoltà economiche, relazioni dolorose e problemi di salute che hanno cambiato profondamente il mio modo di vivere.</p>
+            <p>Per molto tempo ho creduto che fosse colpa mia. Che non fossi abbastanza forte, abbastanza brava, abbastanza "qualcosa".</p>
+            <p>Poi ho capito una cosa: <strong>il problema non ero io. Il problema erano gli schemi mentali che ripetevo senza saperlo.</strong></p>
+            <p>Ho iniziato a studiare il dialogo interiore, le convinzioni e le abitudini mentali. Giorno dopo giorno ho sperimentato pratiche di consapevolezza che mi hanno aiutata a ritrovare forza, direzione e fiducia.</p>
+            <div class="story-highlight">«Non voglio dirti che cambiare sia facile.<br>Voglio ricordarti che puoi ancora cominciare.»</div>
+            <p>Oggi desidero mettere questa esperienza al servizio di altre donne, senza formule magiche e senza promesse impossibili.</p>
+            <p>Perché so cosa significa sentirsi bloccate. E so anche che ne si può uscire.</p>
         </div>
-        <div>
-          <p class="eyebrow">La mia storia</p>
-          <h2>Non insegno da una vita perfetta. Condivido ciò che mi ha aiutata a rialzarmi.</h2>
-          <p>
-            Mi chiamo Maria Voika. Ho attraversato depressione, difficoltà economiche, relazioni
-            dolorose e problemi di salute che hanno cambiato profondamente il mio modo di vivere.
-          </p>
-          <p>
-            Ho iniziato a studiare il dialogo interiore, le convinzioni e le abitudini mentali.
-            Giorno dopo giorno ho sperimentato pratiche di consapevolezza che mi hanno aiutata
-            a ritrovare forza, direzione e fiducia.
-          </p>
-          <p>
-            Oggi desidero mettere questa esperienza al servizio di altre donne, senza formule magiche
-            e senza promesse impossibili.
-          </p>
-          <div class="quote">«Non voglio dirti che cambiare sia facile. Voglio ricordarti che puoi ancora cominciare.»</div>
-        </div>
-      </div>
     </section>
 
-    <section class="soft" id="libri">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Inizia dalla lettura</p>
-          <h2>I miei libri su Amazon</h2>
-          <p>Due guide per conoscere il mio approccio e iniziare a lavorare sul tuo dialogo interiore.</p>
+    <!-- 6. WHAT YOU GET (Social PROOF + MECCANISMO) -->
+    <section id="masterclass">
+        <div class="section-label">Masterclass gratuita</div>
+        <h2>Non è troppo tardi per ricominciare.</h2>
+        <p style="text-align: center; color: var(--brown); font-size: 1.05rem; max-width: 550px; margin: 0 auto 40px;">
+            Una serata online gratuita dedicata alle donne che desiderano tornare a credere in se stesse. Pratica, sincera, senza promesse miracolose.
+        </p>
+        <div class="get-list">
+            <div class="get-item">
+                <h3>01 — Riconoscere gli schemi</h3>
+                <p>Capirai perché alcune paure e convinzioni continuano a influenzare le tue scelte, anche senza che tu te ne accorga.</p>
+            </div>
+            <div class="get-item">
+                <h3>02 — Cambiare il dialogo interiore</h3>
+                <p>Scoprirai come osservare le parole che rivolgi a te stessa e renderle più utili e vere.</p>
+            </div>
+            <div class="get-item">
+                <h3>03 — Un piccolo rituale quotidiano</h3>
+                <p>Faremo insieme un esercizio breve da ripetere al mattino per ritrovare presenza e direzione.</p>
+            </div>
+            <div class="get-item">
+                <h3>04 — Il tuo primo passo</h3>
+                <p>Uscirai dalla serata con una decisione concreta da applicare nella tua vita quotidiana.</p>
+            </div>
         </div>
-        <div class="books">
-          <article class="book">
-            <span class="num">LIBRO 01</span>
-            <h3>La Legge dell'Attrazione</h3>
-            <p>Una guida pratica per comprendere pensieri, credenze e azioni quotidiane.</p>
-            <a class="btn btn-primary" href="https://www.amazon.it/dp/B0H9FZ5X73" target="_blank" rel="noopener">Vedi su Amazon</a>
-          </article>
-          <article class="book">
-            <span class="num">LIBRO 02</span>
-            <h3>Il secondo libro di Maria Voika</h3>
-            <p>Un altro passo nel percorso di consapevolezza e riprogrammazione mentale.</p>
-            <a class="btn btn-primary" href="https://www.amazon.it/dp/B0H9JJQVVB" target="_blank" rel="noopener">Vedi su Amazon</a>
-          </article>
-        </div>
-      </div>
     </section>
 
-    <section>
-      <div class="container">
-        <div class="banner">
-          <div>
-            <p class="eyebrow">Masterclass gratuita</p>
-            <h2 style="font-size:clamp(2.2rem,5vw,4rem);margin-bottom:12px">Non è troppo tardi per ricominciare.</h2>
-            <p>Una serata online dedicata alle donne che desiderano tornare a credere in se stesse.</p>
-          </div>
-          <a class="btn btn-primary" href="masterclass.html">Scopri la masterclass</a>
-        </div>
-      </div>
+    <!-- 9. CTA FINALE -->
+    <section class="cta-section">
+        <h2>Il primo passo può essere piccolo.<br>Ma può cambiare tutto.</h2>
+        <p>Concediti un'ora tutta per te. È gratuita. È online. È il tuo momento.</p>
+        <a href="masterclass.html" class="cta-button">Partecipa gratis alla masterclass →</a>
+        <p class="cta-urgency">🎁 Posti limitati · Iscrizione gratuita · Nessun impegno</p>
     </section>
 
-    <section class="soft" id="contatti">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Parliamone</p>
-          <h2>Hai una domanda o vuoi capire da dove iniziare?</h2>
-          <p>Scrivimi. Ti risponderò personalmente e con sincerità.</p>
+    <!-- LIBRI -->
+    <section id="libri" style="background: var(--beige-light);">
+        <div class="section-label">Inizia dalla lettura</div>
+        <h2>I miei libri su Amazon</h2>
+        <p style="text-align: center; color: var(--brown); margin-bottom: 40px;">Due guide per conoscere il mio approccio e iniziare a lavorare sul tuo dialogo interiore.</p>
+        <div style="display: grid; gap: 30px; max-width: 600px; margin: 0 auto;">
+            <div class="get-item">
+                <h3>La Legge dell'Attrazione</h3>
+                <p>Una guida pratica per comprendere pensieri, credenze e azioni quotidiane.</p>
+                <a href="https://www.amazon.it/dp/B0H9FZ5X73" target="_blank" style="color: var(--green); text-decoration: none; font-size: 0.9rem;">Vedi su Amazon →</a>
+            </div>
+            <div class="get-item">
+                <h3>Il secondo libro di Maria Voika</h3>
+                <p>Un altro passo nel percorso di consapevolezza e riprogrammazione mentale.</p>
+                <a href="https://www.amazon.it/dp/B0H9JJQVVB" target="_blank" style="color: var(--green); text-decoration: none; font-size: 0.9rem;">Vedi su Amazon →</a>
+            </div>
         </div>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>WhatsApp</h3>
-            <p>Il modo più semplice per mandarmi un messaggio diretto.</p>
-            <a class="contact-link" href="https://wa.me/393714518694" target="_blank" rel="noopener">371 451 8694 →</a>
-          </div>
-          <div class="contact-card">
-            <h3>Email</h3>
-            <p>Per richieste, collaborazioni e informazioni sui miei percorsi.</p>
-            <a class="contact-link" href="mailto:voichitamaria77@gmail.com">voichitamaria77@gmail.com →</a>
-          </div>
-        </div>
-      </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <div><strong>Maria Voika · Riprogrammazione Mentale</strong></div>
-      <div>© 2026 Maria Voika · Tutti i diritti riservati</div>
-      <div>I contenuti hanno finalità educative e non sostituiscono assistenza medica o psicologica.</div>
-    </div>
-  </footer>
+    <!-- CONTATTI -->
+    <section class="contact" id="contatti">
+        <div class="section-label">Parliamone</div>
+        <h2>Hai una domanda o vuoi capire da dove iniziare?</h2>
+        <p style="color: var(--brown); margin-bottom: 30px;">Scrivimi. Ti risponderò personalmente e con sincerità.</p>
+        <div class="contact-links">
+            <a href="https://wa.me/393714518694" target="_blank" class="contact-link">WhatsApp: 371 451 8694</a>
+            <a href="mailto:voichitamaria77@gmail.com" class="contact-link">Email: voichitamaria77@gmail.com</a>
+        </div>
+    </section>
 
-  <div class="mobile-cta">
-    <a class="btn btn-primary" href="masterclass.html">Masterclass gratuita</a>
-  </div>
+    <!-- FOOTER -->
+    <footer>
+        <p>Maria Voika · Riprogrammazione Mentale</p>
+        <p style="margin-top: 10px; color: var(--beige-dark);">
+            © 2026 Maria Voika · Tutti i diritti riservati<br>
+            I contenuti hanno finalità educative e non sostituiscono assistenza medica o psicologica.
+        </p>
+    </footer>
+
 </body>
 </html>

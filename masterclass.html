@@ -1,32 +1,559 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Non è troppo tardi: una serata online gratuita con Maria Voika, dedicata alle donne che desiderano ritrovare fiducia in se stesse e ricominciare." />
-  <meta property="og:title" content="Non è troppo tardi | Serata gratuita con Maria Voika" />
-  <meta property="og:description" content="Una serata online gratuita per donne che vogliono ricominciare a credere in se stesse." />
-  <meta property="og:type" content="website" />
-  <title>Non è troppo tardi | Maria Voika</title>
-  <style>
-    :root{--bg:#fffaf7;--surface:#fff;--soft:#f7eee9;--text:#2b2323;--muted:#6d6060;--accent:#9b4f5e;--accent-dark:#773846;--accent-soft:#f3dce1;--gold:#b6874a;--line:#eadbd6;--shadow:0 18px 60px rgba(80,43,49,.12);--radius:22px;--max:1120px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 10% 10%,rgba(243,220,225,.7),transparent 28rem),linear-gradient(180deg,#fffaf7 0%,#fff 46%,#fffaf7 100%);line-height:1.6}a{color:inherit}.container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}.topbar{padding:16px 0;border-bottom:1px solid rgba(234,219,214,.78);background:rgba(255,250,247,.86);backdrop-filter:blur(12px);position:sticky;top:0;z-index:20}.topbar-inner{display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{font-weight:900;letter-spacing:.08em;font-size:.91rem}.brand span{color:var(--accent);font-weight:700}.mini-link{font-size:.9rem;font-weight:800;color:var(--accent-dark);text-decoration:none}.hero{padding:82px 0 66px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:56px}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.08;margin-top:0}h1{font-size:clamp(3.25rem,8vw,6.9rem);letter-spacing:-.055em;margin-bottom:22px;max-width:850px}h1 em{color:var(--accent);font-weight:inherit}.hero-lead{font-size:clamp(1.12rem,2vw,1.35rem);color:var(--muted);max-width:720px;margin:0 0 28px}.eyebrow{display:inline-flex;align-items:center;gap:9px;margin:0 0 18px;padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.76);color:var(--accent-dark);font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(182,135,74,.12)}.event-strip{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}.event-pill{border:1px solid var(--line);background:rgba(255,255,255,.84);border-radius:16px;padding:11px 15px;font-weight:800;box-shadow:0 8px 24px rgba(80,43,49,.06)}.cta{display:inline-flex;justify-content:center;align-items:center;min-height:58px;padding:16px 24px;border:0;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;text-decoration:none;font-weight:900;font-size:1.02rem;box-shadow:0 16px 34px rgba(119,56,70,.24);cursor:pointer;transition:.18s}.cta:hover{transform:translateY(-2px);box-shadow:0 20px 40px rgba(119,56,70,.3)}.microcopy{color:var(--muted);font-size:.9rem;margin:12px 0 0}.hero-card{position:relative;padding:34px;border:1px solid rgba(234,219,214,.95);border-radius:30px;background:rgba(255,255,255,.86);box-shadow:var(--shadow)}.hero-card:before{content:"“";position:absolute;top:-40px;right:20px;color:var(--accent-soft);font:170px/1 Georgia,serif;z-index:-1}.hero-card p{font-family:Georgia,"Times New Roman",serif;font-size:1.42rem;line-height:1.45;margin:0 0 20px}.hero-card strong{display:block;color:var(--accent-dark);font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:.95rem}section{padding:82px 0}.soft{background:var(--soft);border-block:1px solid var(--line)}.section-head{max-width:760px;margin-bottom:38px}.section-head h2{font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.035em;margin-bottom:18px}.section-head p{color:var(--muted);font-size:1.12rem;margin:0}.recognition-grid,.learn-grid,.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.recognition-item,.learn-item,.faq-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}.recognition-item{display:flex;align-items:flex-start;gap:14px}.icon{flex:0 0 auto;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:var(--accent-soft);color:var(--accent-dark);font-weight:900}.recognition-item p,.learn-item p,.faq-item p{margin:0;color:var(--muted)}.bridge{margin-top:30px;padding:25px 28px;border-left:4px solid var(--accent);background:rgba(255,255,255,.78);border-radius:0 var(--radius) var(--radius) 0;font-size:1.15rem;font-weight:750}.story-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}.portrait-placeholder{min-height:500px;border-radius:30px;border:1px dashed #caaab1;display:grid;place-items:center;text-align:center;padding:34px;color:var(--muted);background:linear-gradient(rgba(255,255,255,.58),rgba(255,255,255,.58)),radial-gradient(circle at 50% 30%,#f0d4da,#f8eee9 52%,#fff);box-shadow:var(--shadow)}.portrait-placeholder strong{color:var(--accent-dark);display:block;margin-bottom:8px}.story-copy h2{font-size:clamp(2.35rem,5vw,4.2rem);letter-spacing:-.04em;margin-bottom:22px}.story-copy p{color:var(--muted);font-size:1.07rem}.story-quote{margin-top:24px;padding:22px;border-radius:18px;background:var(--soft);border:1px solid var(--line);color:var(--text)!important;font-family:Georgia,"Times New Roman",serif;font-size:1.22rem!important}.learn-item h3{font-size:1.5rem;margin-bottom:10px}.learn-number{color:var(--gold);font:800 1rem/1 Inter,sans-serif;letter-spacing:.08em}.honest-box{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px}.honest-box h3{font-size:1.75rem;margin-bottom:14px}.honest-list{display:grid;gap:10px;color:var(--muted)}.honest-list span:before{content:"—";color:var(--accent);font-weight:900;margin-right:10px}.registration{position:relative;overflow:hidden;background:#2e2225;color:#fff}.registration:after{content:"";position:absolute;inset:auto -150px -240px auto;width:560px;height:560px;border-radius:50%;background:rgba(155,79,94,.35);filter:blur(10px)}.registration-grid{position:relative;z-index:1;display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}.registration h2{font-size:clamp(2.4rem,5vw,4.6rem);letter-spacing:-.04em;margin-bottom:20px}.registration-copy p{color:#dacfd2;font-size:1.08rem}.form-card{background:#fff;color:var(--text);border-radius:26px;padding:30px;box-shadow:0 24px 70px rgba(0,0,0,.24)}label{display:block;margin:0 0 8px;font-weight:850}input[type=text],input[type=email]{width:100%;height:54px;margin-bottom:18px;border:1px solid #d8c8c4;border-radius:13px;padding:0 15px;font:inherit;color:var(--text);background:#fff}input:focus{outline:3px solid rgba(155,79,94,.15);border-color:var(--accent)}.check{display:flex;align-items:flex-start;gap:10px;margin:2px 0 20px;color:var(--muted);font-size:.86rem}.check input{margin-top:4px}.form-card .cta{width:100%}.form-note{margin:12px 0 0;color:var(--muted);font-size:.82rem;text-align:center}.faq-item h3{font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:1rem;line-height:1.4;margin-bottom:8px}footer{padding:34px 0 100px;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}.footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.disclaimer{max-width:800px;margin-top:14px;font-size:.8rem;color:#847777}.mobile-cta{display:none}@media(max-width:860px){.hero-grid,.story-grid,.registration-grid{grid-template-columns:1fr}.hero{padding-top:56px}.hero-card{margin-top:10px}.story-grid{gap:32px}.portrait-placeholder{min-height:340px}}@media(max-width:640px){.container{width:min(var(--max),calc(100% - 26px))}.topbar .mini-link{display:none}h1{font-size:clamp(3.05rem,15vw,4.8rem)}section{padding:64px 0}.recognition-grid,.learn-grid,.faq-grid{grid-template-columns:1fr}.hero-card,.form-card{padding:24px}.mobile-cta{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:30}.mobile-cta .cta{width:100%;min-height:54px}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO -->
+    <title>Masterclass Gratuita · Riprogrammazione Mentale per Donne | Maria Voika</title>
+    <meta name="description" content="Masterclass gratuita online: riconosci gli schemi che ti bloccano, cambia il tuo dialogo interiore e fai il primo passo verso una vita più tua. Con Maria Voika.">
+    <meta name="keywords" content="masterclass gratuita, riprogrammazione mentale, ricominciare, donne, fiducia in se stesse, dialogo interiore, frequenze energetiche">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Masterclass Gratuita · Non è troppo tardi per ricominciare">
+    <meta property="og:description" content="Una serata online gratuita per donne che desiderano tornare a credere in se stesse. Con Maria Voika.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="it_IT">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #e8ded1;
+            --beige-light: #f3ede3;
+            --beige-dark: #c4b5a0;
+            --brown: #6b5d4f;
+            --brown-dark: #3a2f25;
+            --green: #5a6b4d;
+            --white: #faf7f2;
+            --shadow: 0 4px 20px rgba(58, 47, 37, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background: var(--beige);
+            color: var(--brown-dark);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            color: var(--brown-dark);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(232, 222, 209, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 10px rgba(58, 47, 37, 0.05);
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--brown-dark);
+        }
+
+        .nav-logo a { text-decoration: none; color: var(--brown-dark); }
+
+        .nav-cta {
+            background: var(--brown-dark);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .nav-cta:hover { background: var(--green); }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 60px;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.8rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--green);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1.25;
+            max-width: 700px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 .accent {
+            font-style: italic;
+            color: var(--green);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 550px;
+            color: var(--brown);
+            margin-bottom: 15px;
+        }
+
+        .hero-details {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 30px 0;
+            font-size: 0.95rem;
+            color: var(--brown);
+        }
+
+        .hero-details span {
+            background: var(--white);
+            padding: 8px 18px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--brown-dark);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: 35px;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+            margin-top: 10px;
+        }
+
+        .hero-cta:hover { background: var(--green); transform: translateY(-2px); }
+
+        section {
+            padding: 70px 20px;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--green);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        section h2 {
+            font-size: clamp(1.7rem, 4vw, 2.5rem);
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+
+        .qualify-box {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 50px 35px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .qualify-box p {
+            font-size: 1.05rem;
+            color: var(--brown);
+            margin-bottom: 25px;
+        }
+
+        .qualify-list {
+            display: grid;
+            gap: 20px;
+            text-align: left;
+            margin-top: 25px;
+        }
+
+        .qualify-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .qualify-check {
+            color: var(--green);
+            font-size: 1.2rem;
+            min-width: 25px;
+        }
+
+        .problem-text {
+            font-size: 1.1rem;
+            color: var(--brown);
+            max-width: 600px;
+            margin: 0 auto 20px;
+            text-align: center;
+        }
+
+        .problem-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.4rem;
+            color: var(--brown-dark);
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 25px;
+            border-left: 3px solid var(--green);
+        }
+
+        .story-box {
+            background: var(--beige-light);
+            padding: 60px 20px;
+            border-radius: 0;
+            max-width: 100%;
+        }
+
+        .story-inner {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .story-inner p {
+            font-size: 1.05rem;
+            color: var(--brown);
+            margin-bottom: 18px;
+        }
+
+        .story-highlight {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.35rem;
+            color: var(--brown-dark);
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .get-list {
+            display: grid;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .get-item {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .get-item h3 { font-size: 1.2rem; margin-bottom: 8px; }
+        .get-item p { color: var(--brown); }
+
+        .not-find {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .not-find p {
+            color: var(--brown);
+            font-size: 0.95rem;
+        }
+
+        /* FORM */
+        .form-section {
+            background: var(--brown-dark);
+            color: var(--beige);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .form-section h2 { color: var(--beige); }
+
+        .form-section p { color: var(--beige-dark); margin-bottom: 30px; }
+
+        .form-box {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: left;
+        }
+
+        .form-box label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--brown);
+            margin-bottom: 5px;
+            margin-top: 15px;
+        }
+
+        .form-box input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--beige-dark);
+            border-radius: 10px;
+            font-family: 'Jost', sans-serif;
+            font-size: 1rem;
+            color: var(--brown-dark);
+            background: var(--beige-light);
+        }
+
+        .form-box input:focus {
+            outline: none;
+            border-color: var(--green);
+        }
+
+        .form-box .consenso {
+            font-size: 0.8rem;
+            color: var(--brown);
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .form-box .consenso input { width: auto; min-width: 18px; margin-top: 3px; }
+
+        .form-button {
+            width: 100%;
+            background: var(--brown-dark);
+            color: var(--white);
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Jost', sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .form-button:hover { background: var(--green); }
+
+        .form-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--brown);
+            margin-top: 15px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            color: var(--brown);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background: var(--brown-dark);
+            color: var(--beige);
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        footer a { color: var(--beige-dark); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            .nav-logo { font-size: 1rem; }
+            .hero h1 { font-size: 2rem; }
+            .qualify-box { padding: 35px 20px; }
+            .problem-quote { font-size: 1.15rem; padding: 20px; }
+        }
+    </style>
 </head>
 <body>
-<header class="topbar"><div class="container topbar-inner"><div class="brand">MARIA VOIKA <span>· RIPROGRAMMAZIONE MENTALE</span></div><a class="mini-link" href="#iscrizione">Partecipa gratuitamente →</a></div></header>
-<main>
-<section class="hero"><div class="container hero-grid"><div><p class="eyebrow">Serata online gratuita per donne</p><h1>Non è troppo tardi per <em>ricominciare.</em></h1><p class="hero-lead">Una serata dedicata alle donne che hanno passato anni a prendersi cura degli altri e oggi desiderano tornare a credere in se stesse.</p><div class="event-strip"><div class="event-pill">📅 Venerdì 24 luglio 2026</div><div class="event-pill">🕣 Ore 20:30</div><div class="event-pill">💻 Online</div><div class="event-pill">🎁 Gratuita</div></div><a class="cta" href="#iscrizione">Sì, voglio dedicare questa serata a me</a><p class="microcopy">Iscrizione gratuita. Riceverai le istruzioni per partecipare via email.</p></div><aside class="hero-card"><p>Ti è mai capitato di guardarti allo specchio e domandarti:<strong>«Quando ho smesso di credere in me?»</strong></p><p>Oppure di pensare:<strong>«Forse ormai è troppo tardi per cambiare.»</strong></p><p style="margin-bottom:0">Se queste parole ti appartengono, questa serata nasce anche per te.</p></aside></div></section>
-<section class="soft"><div class="container"><div class="section-head"><p class="eyebrow">Forse ti riconosci</p><h2>Hai dato tanto agli altri. Adesso non sai più da dove ripartire.</h2><p>Non significa che tu sia debole o incapace. A volte significa soltanto che sei rimasta troppo a lungo all'ultimo posto nella tua stessa vita.</p></div><div class="recognition-grid"><div class="recognition-item"><div class="icon">✓</div><p>Ti impegni, ma hai la sensazione che nella tua vita nulla cambi davvero.</p></div><div class="recognition-item"><div class="icon">✓</div><p>Hai perso fiducia nelle tue capacità e dubiti continuamente delle tue scelte.</p></div><div class="recognition-item"><div class="icon">✓</div><p>Vorresti ricominciare, ma non sai quale dovrebbe essere il primo passo.</p></div><div class="recognition-item"><div class="icon">✓</div><p>Ti guardi indietro e temi di avere ormai perso troppo tempo.</p></div></div><div class="bridge">Questa serata non nasce per prometterti una vita perfetta. Nasce per aiutarti a vedere che il prossimo capitolo della tua storia può ancora iniziare.</div></div></section>
-<section><div class="container story-grid"><div class="portrait-placeholder"><div><strong>INSERISCI QUI UNA TUA FOTO</strong>Scegli un ritratto naturale, luminoso e autentico.<br>Salvalo come <b>maria-voika.jpg</b> e sostituisci questo blocco con un tag &lt;img&gt;.</div></div><div class="story-copy"><p class="eyebrow">Perché ho creato questa serata</p><h2>Anch'io ho attraversato momenti in cui pensavo di non farcela.</h2><p>Mi chiamo Maria Voika. Ho conosciuto la paura, la depressione, le difficoltà economiche e problemi di salute che hanno cambiato profondamente il mio modo di guardare la vita.</p><p>Non ho trovato una formula magica. Ho iniziato, giorno dopo giorno, a osservare il mio dialogo interiore, le mie convinzioni e le scelte che continuavo a ripetere. Ho studiato e sperimentato pratiche di consapevolezza che mi hanno aiutata a ritrovare forza, direzione e fiducia.</p><p>Oggi desidero condividere ciò che mi è stato utile, con sincerità e senza promesse miracolose, perché so cosa significa sentirsi bloccate e credere che sia ormai troppo tardi.</p><p class="story-quote">«Non voglio dirti che cambiare sia facile. Voglio ricordarti che puoi ancora cominciare.»</p></div></div></section>
-<section class="soft"><div class="container"><div class="section-head"><p class="eyebrow">Cosa porterai con te</p><h2>Tre passaggi semplici per iniziare a ritrovare fiducia.</h2><p>Non sarà una lezione piena di parole difficili. Sarà una serata pratica, umana e accessibile.</p></div><div class="learn-grid"><article class="learn-item"><span class="learn-number">01</span><h3>Riconoscere gli schemi</h3><p>Capirai perché alcune paure e convinzioni continuano a influenzare le tue scelte.</p></article><article class="learn-item"><span class="learn-number">02</span><h3>Cambiare il dialogo interiore</h3><p>Scoprirai come osservare le parole che rivolgi a te stessa e renderle più utili e vere.</p></article><article class="learn-item"><span class="learn-number">03</span><h3>Creare un piccolo rituale</h3><p>Farai con me un esercizio breve da ripetere al mattino per ritrovare presenza e direzione.</p></article><article class="learn-item"><span class="learn-number">04</span><h3>Scegliere il primo passo</h3><p>Uscirai dalla serata con una decisione concreta da applicare nella tua vita quotidiana.</p></article></div><div class="honest-box"><h3>Quello che non troverai</h3><div class="honest-list"><span>Nessuna promessa di ricchezza, guarigione o trasformazione immediata.</span><span>Nessuna colpa se oggi ti senti stanca, insicura o confusa.</span><span>Nessuna pressione ad acquistare qualcosa durante la serata.</span></div></div></div></section>
-<section class="registration" id="iscrizione"><div class="container registration-grid"><div class="registration-copy"><p class="eyebrow">Il primo passo può essere piccolo</p><h2>Concediti un'ora tutta per te.</h2><p>Compila il modulo per prenotare gratuitamente il tuo posto. Dopo l'iscrizione riceverai le informazioni necessarie per partecipare alla diretta online.</p><div class="event-strip"><div class="event-pill" style="color:#2b2323">Venerdì 24 luglio</div><div class="event-pill" style="color:#2b2323">Ore 20:30</div></div></div><form class="form-card" action="https://formsubmit.co/voichitamaria77@gmail.com" method="POST"><input type="hidden" name="_subject" value="Nuova iscrizione — Non è troppo tardi"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><label for="nome">Il tuo nome</label><input id="nome" name="Nome" type="text" autocomplete="name" placeholder="Come ti chiami?" required><label for="email">La tua email</label><input id="email" name="Email" type="email" autocomplete="email" placeholder="nome@email.it" required><label class="check"><input type="checkbox" required><span>Acconsento all'utilizzo dei miei dati per ricevere le informazioni relative alla serata. Potrò chiedere la cancellazione in qualsiasi momento.</span></label><button class="cta" type="submit">Sì, voglio partecipare gratuitamente</button><p class="form-note">Niente spam. I tuoi dati saranno usati soltanto per questa iniziativa.</p>
-          <p class="form-note">
-            Hai una domanda? <a href="https://wa.me/393714518694" target="_blank" rel="noopener noreferrer"><strong>Scrivimi su WhatsApp</strong></a>
-          </p></form></div></section>
-<section><div class="container"><div class="section-head"><p class="eyebrow">Domande frequenti</p><h2>Prima di iscriverti</h2></div><div class="faq-grid"><article class="faq-item"><h3>La partecipazione è davvero gratuita?</h3><p>Sì. Non è richiesto alcun pagamento per partecipare alla serata.</p></article><article class="faq-item"><h3>Dove si svolgerà?</h3><p>Online. Le indicazioni per collegarti saranno inviate all'indirizzo email inserito.</p></article><article class="faq-item"><h3>Devo conoscere la riprogrammazione mentale?</h3><p>No. La serata è pensata anche per chi parte da zero e desidera un approccio semplice.</p></article><article class="faq-item"><h3>È un percorso medico o psicologico?</h3><p>No. È un incontro educativo e motivazionale e non sostituisce cure, diagnosi o supporto professionale.</p></article></div></div></section>
-</main>
-<footer><div class="container footer-inner"><div><strong>Maria Voika · Riprogrammazione Mentale</strong><br><a href="mailto:voichitamaria77@gmail.com">voichitamaria77@gmail.com</a></div><div>© 2026 Maria Voika · Tutti i diritti riservati</div><div class="disclaimer">I contenuti della serata hanno finalità educative e di crescita personale. Non costituiscono consulenza medica, psicologica o finanziaria e non promettono risultati specifici.</div></div></footer>
-<div class="mobile-cta"><a class="cta" href="#iscrizione">Prenota il posto gratuito</a></div>
+
+    <nav>
+        <div class="nav-logo"><a href="index.html">Maria Voika · Riprogrammazione Mentale</a></div>
+        <a href="#iscrizione" class="nav-cta">Partecipa gratis</a>
+    </nav>
+
+    <!-- 1. HOOK -->
+    <div class="hero">
+        <div class="hero-eyebrow">Serata online gratuita per donne</div>
+        <h1>Non è troppo tardi<br>per <span class="accent">ricominciare.</span></h1>
+        <p>Una serata dedicata alle donne che hanno passato anni a prendersi cura degli altri e oggi desiderano tornare a credere in se stesse.</p>
+        <div class="hero-details">
+            <span>📅 Venerdì 28 agosto 2026</span>
+            <span>🕣 Ore 20:30</span>
+            <span>💻 Online</span>
+            <span>🎁 Gratuita</span>
+        </div>
+        <a href="#iscrizione" class="hero-cta">Sì, voglio dedicare questa serata a me →</a>
+    </div>
+
+    <!-- 2. QUALIFY AUDIENCE -->
+    <section>
+        <div class="qualify-box">
+            <div class="section-label">Forse ti riconosci</div>
+            <h2>Hai dato tanto agli altri.<br>Adesso non sai più da dove ripartire.</h2>
+            <p>Non significa che tu sia debole o incapace. A volte significa soltanto che sei rimasta troppo a lungo all'ultimo posto nella tua stessa vita.</p>
+            <div class="qualify-list">
+                <div class="qualify-item">
+                    <div class="qualify-check">✓</div>
+                    <div>Ti impegni, ma hai la sensazione che nella tua vita nulla cambi davvero.</div>
+                </div>
+                <div class="qualify-item">
+                    <div class="qualify-check">✓</div>
+                    <div>Hai perso fiducia nelle tue capacità e dubiti continuamente delle tue scelte.</div>
+                </div>
+                <div class="qualify-item">
+                    <div class="qualify-check">✓</div>
+                    <div>Vorresti ricominciare, ma non sai quale dovrebbe essere il primo passo.</div>
+                </div>
+                <div class="qualify-item">
+                    <div class="qualify-check">✓</div>
+                    <div>Ti guardi indietro e temi di avere ormai perso troppo tempo.</div>
+                </div>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.95rem;">Questa serata non nasce per prometterti una vita perfetta. Nasce per aiutarti a vedere che il prossimo capitolo della tua storia può ancora iniziare.</p>
+        </div>
+    </section>
+
+    <!-- 3. AGITATE PROBLEM -->
+    <section>
+        <div class="section-label">La verità che nessuno ti dice</div>
+        <h2>Hai provato a "pensare positivo".<br>Ma qualcosa non ha funzionato.</h2>
+        <p class="problem-text">Forse hai letto libri sulla legge dell'attrazione. Hai fatto liste di gratitudine. Hai provato a "pensare in grande".</p>
+        <p class="problem-text">Eppure, dopo un po', la stessa voce tornava. Le stesse paure. La stessa sensazione di essere bloccata.</p>
+        <div class="problem-quote">«Non è che non ci provi. È che nessuno ti ha mai mostrato come uscire dallo schema, non solo per un giorno, ma per davvero.»</div>
+        <p class="problem-text">E intanto il tempo passa. La fiducia si erode. E una parte di te si chiede: <em>"forse è davvero troppo tardi per me?"</em></p>
+        <p class="problem-text" style="margin-top: 25px;"><strong>Non è troppo tardi. E non è colpa tua.</strong></p>
+    </section>
+
+    <!-- 4 & 5. NEW OPPORTUNITY + HERO STORY -->
+    <section class="story-box" id="chi-sono">
+        <div class="story-inner">
+            <div class="section-label">La mia storia</div>
+            <h2 style="text-align: center;">Non insegno da una vita perfetta.<br>Condivido ciò che mi ha aiutata a rialzarmi.</h2>
+            <p>Mi chiamo Maria Voika. Ho attraversato depressione, difficoltà economiche, relazioni dolorose e problemi di salute che hanno cambiato profondamente il mio modo di guardare la vita.</p>
+            <p>Per molto tempo ho creduto che fosse colpa mia. Che non fossi abbastanza forte, abbastanza brava, abbastanza "qualcosa".</p>
+            <p>Poi ho capito una cosa importante: <strong>il problema non ero io. Il problema erano gli schemi mentali che ripetevo senza saperlo.</strong></p>
+            <p>Ho iniziato a studiare il dialogo interiore, le convinzioni e le abitudini mentali. Giorno dopo giorno ho sperimentato pratiche di consapevolezza che mi hanno aiutata a ritrovare forza, direzione e fiducia.</p>
+            <div class="story-highlight">«Non voglio dirti che cambiare sia facile.<br>Voglio ricordarti che puoi ancora cominciare.»</div>
+            <p>Oggi desidero condividere ciò che mi è stato utile, con sincerità e senza promesse miracolose, perché so cosa significa sentirsi bloccate e credere che sia ormai troppo tardi.</p>
+        </div>
+    </section>
+
+    <!-- 6 & 7. WHAT YOU GET + MECCANISMO -->
+    <section>
+        <div class="section-label">Cosa porterai con te</div>
+        <h2>Quattro passaggi semplici<br>per iniziare a ritrovare fiducia.</h2>
+        <p style="text-align: center; color: var(--brown); margin-bottom: 30px;">Non sarà una lezione piena di parole difficili. Sarà una serata pratica, umana e accessibile.</p>
+        <div class="get-list">
+            <div class="get-item">
+                <h3>01 — Riconoscere gli schemi</h3>
+                <p>Capirai perché alcune paure e convinzioni continuano a influenzare le tue scelte, anche senza che tu te ne accorga.</p>
+            </div>
+            <div class="get-item">
+                <h3>02 — Cambiare il dialogo interiore</h3>
+                <p>Scoprirai come osservare le parole che rivolgi a te stessa e renderle più utili e vere.</p>
+            </div>
+            <div class="get-item">
+                <h3>03 — Un piccolo rituale quotidiano</h3>
+                <p>Faremo insieme un esercizio breve da ripetere al mattino per ritrovare presenza e direzione.</p>
+            </div>
+            <div class="get-item">
+                <h3>04 — Scegliere il primo passo</h3>
+                <p>Uscirai dalla serata con una decisione concreta da applicare nella tua vita quotidiana.</p>
+            </div>
+        </div>
+
+        <div class="not-find">
+            <div class="section-label">Quello che non troverai</div>
+            <p>• Nessuna promessa di ricchezza, guarigione o trasformazione immediata</p>
+            <p>• Nessuna colpa se oggi ti senti stanca, insicura o confusa</p>
+            <p>• Nessuna pressione ad acquistare qualcosa durante la serata</p>
+        </div>
+    </section>
+
+    <!-- 9. CTA + FORM -->
+    <section class="form-section" id="iscrizione">
+        <h2>Il primo passo può essere piccolo.<br>Ma può cambiare tutto.</h2>
+        <p>Concediti un'ora tutta per te. Compila il modulo e prenota il tuo posto gratuito.</p>
+        <div class="form-box">
+            <form action="mailto:voichitamaria77@gmail.com" method="POST" enctype="text/plain">
+                <label for="nome">Il tuo nome</label>
+                <input type="text" id="nome" name="nome" required>
+                
+                <label for="email">La tua email</label>
+                <input type="email" id="email" name="email" required>
+                
+                <div class="consenso">
+                    <input type="checkbox" id="consenso" name="consenso" required>
+                    <label for="consenso">Acconsento all'utilizzo dei miei dati per ricevere le informazioni relative alla serata. Posso chiedere la cancellazione in qualsiasi momento.</label>
+                </div>
+
+                <button type="submit" class="form-button">Sì, voglio partecipare gratuitamente</button>
+            </form>
+            <p class="form-note">Niente spam. I tuoi dati saranno usati soltanto per questa iniziativa.</p>
+        </div>
+        <p style="margin-top: 25px;">
+            Hai una domanda? <a href="https://wa.me/393714518694" target="_blank" style="color: var(--beige); text-decoration: underline;">Scrivimi su WhatsApp →</a>
+        </p>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <div class="section-label">Domande frequenti</div>
+        <h2>Prima di iscriverti</h2>
+        <div class="faq-item">
+            <h3>La partecipazione è davvero gratuita?</h3>
+            <p>Sì. Non è richiesto alcun pagamento per partecipare alla serata.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Dove si svolgerà?</h3>
+            <p>Online. Le indicazioni per collegarti saranno inviate all'indirizzo email inserito.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Devo conoscere la riprogrammazione mentale?</h3>
+            <p>No. La serata è pensata anche per chi parte da zero e desidera un approccio semplice.</p>
+        </div>
+        <div class="faq-item">
+            <h3>È un percorso medico o psicologico?</h3>
+            <p>No. È un incontro educativo e motivazionale e non sostituisce cure, diagnosi o supporto professionale.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Maria Voika · Riprogrammazione Mentale</p>
+        <p style="margin-top: 10px; color: var(--beige-dark);">
+            © 2026 Maria Voika · Tutti i diritti riservati<br>
+            I contenuti della serata hanno finalità educative e di crescita personale. Non costituiscono consulenza medica, psicologica o finanziaria e non promettono risultati specifici.
+        </p>
+    </footer>
+
 </body>
 </html>
